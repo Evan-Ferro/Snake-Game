@@ -286,7 +286,6 @@ function scoreList(){
     highScore();
     const playerName =  document.getElementById('playerName');
     const newPlayer = playerName.value;
-    
     const scoreContainer = document.getElementById('high-score-list');
 
     //Highscore logic
@@ -298,7 +297,9 @@ function scoreList(){
     allScores.sort((a, b) => b.score - a.score);
     allScores = allScores.slice(0, 5);
     localStorage.setItem('highscore', JSON.stringify(allScores));
-    // allScores.push(result);
+    if(newPlayer === ''){
+        return;
+    }
 
     for(let i = 0; i < allScores.length; i++){
         const highScoreEl = document.createElement('div');
