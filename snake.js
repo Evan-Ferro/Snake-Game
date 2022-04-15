@@ -299,9 +299,6 @@ function scoreList(){
     localStorage.setItem('highscore', JSON.stringify(allScores));
     
     for(let i = 0; i < allScores.length; i++){
-        if(newPlayer === ''){
-            return;
-        }
         const highScoreEl = document.createElement('div');
         highScoreEl.innerHTML = `
         <div class="player-score-wrap">

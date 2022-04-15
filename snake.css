@@ -555,8 +555,10 @@ display: none;
     width: 50%;
     margin: auto;
     border-radius: 6px;
-    border: 1px solid black;
-    background-color: whitesmoke;
+    border: 4px solid black;
+    padding: 0.5rem;
+    padding-bottom: 1rem;
+    background-color: blanchedalmond;
 }
 
 .end-game{
@@ -566,7 +568,7 @@ display: none;
     text-align: center;
     font-size: 2.5rem;
     font-weight: 700;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: cursive;
     color: red;
 }
 
@@ -803,7 +805,7 @@ display: none;
 
 .user-name{
     color: black;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: cursive;
     font-size: 1.1rem;
     margin-top: 0.4rem;
 }
@@ -812,10 +814,10 @@ display: none;
     position: absolute;
     right: -6.4rem;
     top: 6rem;
-    color: green;
+    color: black;
     background-color: white;
     border: 2px solid black;
-    padding: 0.8rem;
+    padding: 0.5rem;
     font-family: cursive;
     font-weight: 700;
     font-size: 1.2rem;
