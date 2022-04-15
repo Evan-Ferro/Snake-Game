@@ -21,25 +21,28 @@ createInterval();
     
 function createInterval(){  
     document.addEventListener('keydown', (event) => {
-        
         if(event.key === 'w' || event.key === 'ArrowUp'){
             if(direction !== 'down'){
                 direction = 'up';
+                removeMovement();
             }            
         }
         else if(event.key === 'a' || event.key === 'ArrowLeft'){
             if(direction !== 'right'){
                 direction = 'left';
+                removeMovement();
             }             
         }
         else if(event.key === 's' || event.key === 'ArrowDown'){
             if(direction !== 'up'){
                 direction = 'down';
+                removeMovement();
             }             
         }
         else if(event.key === 'd' || event.key === 'ArrowRight'){
             if(direction !== 'left'){
-                direction = 'right';  
+                direction = 'right';
+                removeMovement();  
             } 
         }
         else if(event.key === 'p' || event.key === 'Escape' && paused === false){
@@ -55,6 +58,12 @@ function showGrid(){
     const Grid = document.getElementById('snakeGrid');
     Grid.classList.add('flex');
     Grid.classList.remove('hide');
+}
+
+function removeMovement(){
+    const movementMenu = document.getElementById('movementMenu');
+    movementMenu.classList.remove('show');
+    movementMenu.classList.add('hide');
 }
 
 function hideMenu(){
