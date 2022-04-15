@@ -643,7 +643,7 @@ display: none;
 
 .paused-txt{
     text-align: center;
-    color: crimson;
+    color: red;
     font-family: cursive;
     font-weight: 800;
     font-size: 2.5rem;
@@ -863,6 +863,7 @@ display: none;
     border-radius: 6px;
     border: 6px solid rgba(0, 0, 0, 0.774);
     margin-top: 7rem;
+    transition: all 0.3s linear;
 }
 
 .movement-key{
@@ -891,6 +892,14 @@ display: none;
 
 .margin-50{
     margin-top: 50%;
+}
+
+.trophy{
+    color: gold;
+}
+
+.trophy-wrap{
+    margin-right: 14rem;
 }
 
 /* The Apple growing & shrinking animation*/

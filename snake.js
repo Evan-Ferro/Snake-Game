@@ -99,6 +99,7 @@ function snakeBoundaries(){
 function startGame(){
     showGrid();
     hideMenu();
+    topScore();
     
     const gameBoard = document.getElementById('gameBoard');
     gameBoard.append(Snake);
@@ -280,14 +281,20 @@ function highScore(){
     gameOver.classList.add('hide');
 }
 
-
+function topScore(){
+    const topScoreHolder = document.getElementById('topScore');
+    const savedScores = localStorage.getItem('highscore') || '[]';
+    let allScores = JSON.parse(savedScores);
+    const topScore = allScores[0].score;
+    topScoreHolder.innerText = topScore;
+}
 
 function scoreList(){
     highScore();
     const playerName =  document.getElementById('playerName');
     const newPlayer = playerName.value;
     const scoreContainer = document.getElementById('high-score-list');
-
+    
     //Highscore logic
     const result = {newPlayer, score}; 
     const savedScores = localStorage.getItem('highscore') || '[]';
@@ -310,8 +317,8 @@ function scoreList(){
         scoreContainer.append(highScoreEl);  
     }
     
-    console.log(allScores.length);
-    console.log(allScores, 'all');
+    
+    console.log(allScores[0]);
 }
     
 
