@@ -97,9 +97,14 @@ function startGame(){
     Snake.style.color = 'white';
     Snake.style.textAlign = 'center';
     
-    gameBoard.append(Apple);
-    Apple.classList.add('appleVisible');
-    draw(Apple, appleX, appleY);
+    const appleWrapper = document.getElementById('appleWrapper');
+    gameBoard.append(appleWrapper);
+    appleWrapper.append(Apple);
+    Apple.classList.add('appleScale');
+    Apple.innerHTML = '&#127822;'
+    
+    appleWrapper.classList.add('appleVisible');
+    draw(appleWrapper, appleX, appleY);
     
     scoreBoard.classList.add('hide');
 
@@ -116,7 +121,7 @@ function frame(){
     const scoreBox = document.getElementById('score');
     const endScore = document.getElementById('endScore');
 
-    if(paused === true){
+    if(paused === true || endGameCalled === true){
         return;
     }
     let angle;
@@ -172,7 +177,7 @@ function frame(){
             appleX = getRandomInt(0, 20);
             appleY = getRandomInt(0, 16);
         }
-        draw(Apple, appleX, appleY);
+        draw(appleWrapper, appleX, appleY);
     }
 }
 
@@ -202,23 +207,6 @@ function buildSnake(){
     const snake2 = document.createElement('span');
     let babySnakeX = 0;
     let babySnakeY = 0;
-   
-    // if(direction === 'right'){
-    //     babySnakeX = snakeX - 1;
-    //     babySnakeY = snakeY;
-    // }
-    // if(direction === 'left'){
-    //     babySnakeX = snakeX + 1;
-    //     babySnakeY = snakeY;
-    // }
-    // if(direction === 'down'){
-    //     babySnakeX = snakeX;
-    //     babySnakeY = snakeY - 1;
-    // }
-    // if(direction === 'up'){
-    //     babySnakeX = snakeX;
-    //     babySnakeY = snakeY + 1;
-    // }
     
     if(snakeBody.length === 0){
         babySnakeX = snakeX;

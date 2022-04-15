@@ -12,10 +12,11 @@
     margin: auto;
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    border: 5px solid black;
     border-radius: 6px;
-    background-color: whitesmoke;
+    background-color: blanchedalmond;
     margin-top: 10%;
+    padding: 1rem;
 }
 
 .title-wrap{
@@ -23,8 +24,10 @@
 }
 
 .title-text{
-    font-family: 'roboto', sans-serif;
-    font-size: 3rem;
+    font-family: cursive;
+    font-size: 3.5rem;
+    color: black;
+    font-weight: 400;
     margin-top: 0;
 }
 
@@ -46,55 +49,74 @@
     text-align: center;
     align-items: center;
     font-size: 3rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: cursive;
     padding: 0.4rem;
+    color: white;
 }
 
 .pause-wrap{
     position: relative;
     display: flex;
     flex-direction: row;
-    height: 4rem;
-    align-items: top;
+    height: 3rem;
+    width: 1.5rem;
+    margin-top: 0.4rem;
 }
 
 .pause{
-    font-size: 2rem;
+    font-size: 5rem;
+    font-weight: 800;
+    font-family: cursive;
+    color: white;
+    height: 3rem;
     cursor: pointer;
+    transform: rotate(90deg);
 }
 
 .start-game{
-    padding: 0.5rem 3rem;
+    padding: 0.5rem 1.5rem;
 }
 
 .play-btn{
-    color: lightgreen;
-    background-color: black;
-    padding: 0.5rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 600;
+    color: green;
+    background-color: white;
+    border: 2px solid black;
+    padding: 0.8rem;
+    font-family: cursive;
+    font-weight: 700;
+    font-size: 1.2rem;
     border-radius: 6px;
 }
 
 .play-btn:hover{
     cursor: pointer;
+    background-color: black;
+    color: lightgreen;
+    border: 2px solid rgb(110, 108, 108);
+    box-shadow: 3px 2px 2px black;
 }
 
 .high-score{
-    padding: 0.5rem 3rem;
+    padding: 0.5rem 1.5rem;
 }
 
 .hs-btn{
-    color: blue;
-    background-color: black;
-    padding: 0.5rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 600;
+    color: orange;
+    background-color: white;
+    border: 2px solid black;
+    padding: 0.8rem;
+    font-family: cursive;
+    font-weight: 700;
+    font-size: 1.2rem;
     border-radius: 6px;
 }
 
 .hs-btn:hover{
     cursor: pointer;
+    background-color: black;
+    border: 2px solid rgb(110, 108, 108);
+    color: orangered;
+    box-shadow: 3px 2px 2px black;
 }
 
 .top-row{
@@ -102,12 +124,15 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 1rem;
-    border-bottom: 1px solid black;
-    background-color: whitesmoke;
+    border-bottom: 2px solid white;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background-color: black;
 }
 
 .apple-icon{
-    height: 3rem;
+    height: 3.6rem;
+    font-size: 2.5rem;
 }
 
 .show{
@@ -126,7 +151,9 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    border: 12px solid black;
+    border: 20px solid black;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
 }
 
 .grid-wrap{
@@ -134,9 +161,10 @@
     display: none;
     flex-direction: column;
     margin: auto;
-    border: 1px solid black;
-    border-radius: 2px;
     margin-top: -5%;
+    border: 4px solid white;
+    border-radius: 9.4px;
+    box-shadow: 3px 2px 9px 0px black;
 }
 
 .grid-piece{
@@ -149,18 +177,18 @@
 }
 
 .game-grid > .grid-piece:nth-child(odd){
-    background-color: whitesmoke;
+    background-color: darkolivegreen;
 }
 .game-grid > .grid-piece:nth-child(even){
-    background-color: grey;
+    background-color: beige;
 }
 
 .game-grid-color > .grid-piece:nth-child(even){
-    background-color: whitesmoke;
+    background-color: darkolivegreen;
 }
 
 .game-grid-color > .grid-piece:nth-child(odd){
-    background-color: grey;
+    background-color: beige;
 }
 
 .game-grid{
@@ -221,17 +249,19 @@
     position: absolute;
     height: 28px;
     width: 28px;
-    
     background-color: blue;
     transition: all 0.2s linear;
 }
 
 .appleVisible{
-    display: block;
+    display: flex;
+    justify-content: center;
     position: absolute;
     height: 28px;
     width: 28px;
-    background-color: red;
+    text-align: center;
+    font-size: 1.6rem;
+    top: -0.3rem;
 }
 
 /* Pause Menu CSS*/
@@ -256,10 +286,10 @@
 
 .paused-txt{
     text-align: center;
-    color: red;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 700;
-    font-size: 2rem;
+    color: crimson;
+    font-family: cursive;
+    font-weight: 800;
+    font-size: 2.5rem;
     margin-bottom: 0;
     margin-top: 0.5rem;
 }
@@ -285,7 +315,8 @@
     z-index: 1;
     background-color: rgba(211, 211, 211, 0.74);
     border-radius: 6px;
-    border: 4px solid black;
+    border: 6px solid black;
+    margin-top: 11rem;
 }
 
 .options-wrap{
@@ -297,35 +328,41 @@
 }
 
 .resume-btn{
-    border: 2px solid black;
     color: white;
-    background-color: gray;
-    font-size: 1.2rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 500;
-    border-radius: 3px;
+    background-color: darkslategray;
+    border: 2px solid black;
     padding: 0.5rem;
+    font-family: cursive;
+    font-weight: 700;
+    font-size: 1.5rem;
+    border-radius: 6px;
 }
 
 .resume-btn:hover{
     cursor: pointer;
-    color: green;
+    background-color: black;
+    border: 2px solid rgb(110, 108, 108);
+    color: lightgreen;
+    box-shadow: 3px 2px 2px black;
 }
 
 .quit-btn:hover{
     cursor: pointer;
+    background-color: black;
+    border: 2px solid rgb(110, 108, 108);
     color: red;
+    box-shadow: 3px 2px 2px black;
 }
 
 .quit-btn{
-    border: 2px solid black;
+    background-color: darkslategray;
     color: white;
-    background-color: gray;
-    font-size: 1.2rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 500;
-    border-radius: 3px;
+    border: 2px solid black;
     padding: 0.5rem;
+    font-family: cursive;
+    font-weight: 700;
+    font-size: 1.5rem;
+    border-radius: 6px;
     width: 20%;
     text-align: center;
 }
@@ -335,11 +372,12 @@
     margin: auto;
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    border: 5px solid black;
     border-radius: 6px;
-    background-color: slategrey;
+    background-color: blanchedalmond;
     margin-top: 10%;
     width: 40%;
+    padding: 0.5rem;
 }
 
 .inside-high-score{
@@ -395,13 +433,13 @@
 
 .player-position{
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: cursive;
     font-size: 1.1rem;
 }
 
 .player-name{
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: cursive;
     font-size: 1.1rem;
 }
 
@@ -414,7 +452,7 @@
 
 .player-score{
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: cursive;
     font-size: 1.1rem;
 }
 
@@ -430,4 +468,23 @@
     align-items: center;
     font-size: 1.3rem;
     font-family: 'roboto', sans-serif;
+}
+
+
+/* The Apple growing & shrinking animation*/
+.appleScale{
+    animation: appleGrow 1s linear infinite alternate;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+@keyframes appleGrow{
+  0%   {transform: scale(1.15);}
+  
+  100% {transform: scale(0.85);}
 }
