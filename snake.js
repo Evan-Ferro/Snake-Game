@@ -97,9 +97,9 @@ function snakeBoundaries(){
     }
 }
 function startGame(){
+    topScore();
     showGrid();
     hideMenu();
-    topScore();
     
     const gameBoard = document.getElementById('gameBoard');
     gameBoard.append(Snake);
