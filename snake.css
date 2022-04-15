@@ -592,6 +592,8 @@ display: none;
     width: 28px;
     border-radius: 20%;
     background-color: blue;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
     transition: all 0.2s linear;
 }
 
@@ -601,6 +603,8 @@ display: none;
     height: 28px;
     width: 28px;
     background-color: blue;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
     transition: all 0.2s linear;
 }
 
