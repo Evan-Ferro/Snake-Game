@@ -290,7 +290,6 @@ function topScore(){
 }
 
 function scoreList(){
-    highScore();
     const playerName =  document.getElementById('playerName');
     const newPlayer = playerName.value;
     const scoreContainer = document.getElementById('high-score-list');
@@ -298,7 +297,7 @@ function scoreList(){
     //Highscore logic
     const result = {newPlayer, score}; 
     const savedScores = localStorage.getItem('highscore') || '[]';
-    console.log(savedScores);
+    
     let allScores = JSON.parse(savedScores);
     let blankScore = [];
     allScores.push(result);
