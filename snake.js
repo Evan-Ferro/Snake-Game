@@ -290,7 +290,6 @@ function topScore(){
 }
 
 function scoreList(){
-    highScore();
     const playerName =  document.getElementById('playerName');
     const newPlayer = playerName.value;
     const scoreContainer = document.getElementById('high-score-list');
@@ -298,7 +297,7 @@ function scoreList(){
     //Highscore logic
     const result = {newPlayer, score}; 
     const savedScores = localStorage.getItem('highscore') || '[]';
-    console.log(savedScores);
+    
     let allScores = JSON.parse(savedScores);
     allScores.push(result);
     allScores.sort((a, b) => b.score - a.score);
@@ -306,6 +305,7 @@ function scoreList(){
     localStorage.setItem('highscore', JSON.stringify(allScores));
 
     for(let i = 0; i < allScores.length; i++){
+        if(newPlayer === "" && )
         const highScoreEl = document.createElement('div');
         highScoreEl.innerHTML = `
         <div class="player-score-wrap">
@@ -317,8 +317,6 @@ function scoreList(){
         scoreContainer.append(highScoreEl);  
     }
     
-    
-    console.log(allScores[0]);
 }
     
 
