@@ -103,7 +103,7 @@ function startGame(){
     
     const gameBoard = document.getElementById('gameBoard');
     gameBoard.append(Snake);
-    Snake.innerText = '^';
+    Snake.innerText = 'o o';
     Snake.style.color = 'white';
     Snake.style.textAlign = 'center';
     
