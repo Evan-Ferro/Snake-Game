@@ -300,12 +300,17 @@ function scoreList(){
     const savedScores = localStorage.getItem('highscore') || '[]';
     console.log(savedScores);
     let allScores = JSON.parse(savedScores);
+    let blankScore = [];
     allScores.push(result);
     allScores.sort((a, b) => b.score - a.score);
     allScores = allScores.slice(0, 5);
     localStorage.setItem('highscore', JSON.stringify(allScores));
 
     for(let i = 0; i < allScores.length; i++){
+        if(allScores[i].score === 0 || allScores[i].newPlayer === ""){
+            allScores.splice(i);
+            break;
+        }
         const highScoreEl = document.createElement('div');
         highScoreEl.innerHTML = `
         <div class="player-score-wrap">
@@ -317,8 +322,6 @@ function scoreList(){
         scoreContainer.append(highScoreEl);  
     }
     
-    
-    console.log(allScores[0]);
 }
     
 
