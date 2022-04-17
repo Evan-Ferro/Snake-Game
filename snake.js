@@ -100,6 +100,8 @@ function startGame(){
     topScore();
     showGrid();
     hideMenu();
+    snakeColor();
+
     
     const gameBoard = document.getElementById('gameBoard');
     gameBoard.append(Snake);
@@ -188,6 +190,7 @@ function frame(){
             appleY = getRandomInt(0, 16);
         }
         draw(appleWrapper, appleX, appleY);
+        snakeColor();
     }
 }
 
@@ -321,6 +324,73 @@ function scoreList(){
         scoreContainer.append(highScoreEl);  
     }
     
+}
+
+function snakeColor(){
+    for(let i = 0; i < snakeBody.length; i++){
+        if(document.getElementById('blueSnake').checked){
+            snakeBody[i].element.style.backgroundColor="blue";
+        }
+        if(document.getElementById('greenSnake').checked){
+            snakeBody[i].element.style.backgroundColor="green";
+        }
+        if(document.getElementById('yellowSnake').checked){
+            snakeBody[i].element.style.backgroundColor="goldenrod";
+        }
+        if(document.getElementById('redSnake').checked){
+            snakeBody[i].element.style.backgroundColor="red";
+        }
+        if(document.getElementById('purpleSnake').checked){
+            snakeBody[i].element.style.backgroundColor="purple";
+        }
+    }
+    
+    if(document.getElementById('blueSnake').checked){
+        console.log('blue');
+        Snake.style.backgroundColor = "blue";
+    }
+    if(document.getElementById('greenSnake').checked){
+        console.log('green');
+        Snake.style.backgroundColor = "green";
+    }
+    if(document.getElementById('yellowSnake').checked){
+        console.log('yellow');
+        Snake.style.backgroundColor = "goldenrod";
+    }
+    if(document.getElementById('redSnake').checked){
+        console.log('red');
+        Snake.style.backgroundColor = "red";
+    }
+    if(document.getElementById('purpleSnake').checked){
+        console.log('purple');
+        Snake.style.backgroundColor = "purple";
+    }
+}
+
+function settingsMenu(){
+    const settingsMenu = document.getElementById('settingsMenu');
+    const startMenu = document.getElementById('startMenu');
+
+    hideMenu();
+    settingsMenu.classList.remove('hide');
+    settingsMenu.classList.add('show');
+}
+
+function hideSettings(){
+    const settingsMenu = document.getElementById('settingsMenu');
+    const startMenu = document.getElementById('startMenu');
+
+    startMenu.classList.remove('hide');
+    startMenu.classList.add('show');
+    settingsMenu.classList.remove('show');
+    settingsMenu.classList.add('hide');
+}
+
+function settingsStart(){
+    startGame();
+    const settingsMenu = document.getElementById('settingsMenu');
+    settingsMenu.classList.remove('show');
+    settingsMenu.classList.add('hide');
 }
     
 

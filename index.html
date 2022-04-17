@@ -16,13 +16,41 @@
             <div class="score-box">
                 <div class="settings-wrap">
                     <div class="gear-wrap">
-                        <span class="gear-icon">&#x2699;</span>
+                        <span onclick="settingsMenu()" class="gear-icon">&#x2699;</span>
                     </div>
                 </div>
                 <div class="start-game"><div onclick="startGame()" class="play-btn"> Play Game </div></div>
                 <div class="high-score"><div onclick="scoreList()" class="hs-btn"> High Scores </div></div>
             </div>
-            
+        </div>
+        <div id="settingsMenu" class="snake-settings-container hide">
+            <p class="title-score">Settings</p>
+            <div class="snake-settings-wrap">
+                <label class="snake-color">
+                    <input checked value="blue" id="blueSnake" name="snakeColor" class="check-box" type="radio">
+                    <span class="snake"></span>
+                </label>
+                <label class="snake-color">
+                    <input value="purple" id="purpleSnake" name="snakeColor" class="check-box" type="radio">
+                    <span class="snake purple"></span>
+                </label>
+                <label class="snake-color">
+                    <input value="green" id="greenSnake" name="snakeColor" class="check-box" type="radio">
+                    <span class="snake green"></span>
+                </label>
+                <label class="snake-color">
+                    <input value="yellow" id="yellowSnake" name="snakeColor" class="check-box" type="radio">
+                    <span class="snake yellow"></span>
+                </label>
+                <label class="snake-color">
+                    <input value="red" id="redSnake" name="snakeColor" class="check-box" type="radio">
+                    <span class="snake red"></span>
+                </label>
+                <div class="score-box margin-top">       
+                    <div class="high-score"><button onclick="hideSettings()" class="hs-btn"> Go Back </button></div>
+                    <div class="start-game"><button onclick="settingsStart()" class="play-btn"> Play Game </button></div>
+                </div>
+            </div>
         </div>
         <div id="gameOver" class="end-game-container">
             <div class="end-game">
