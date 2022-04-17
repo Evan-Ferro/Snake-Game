@@ -369,7 +369,6 @@ function snakeColor(){
 
 function settingsMenu(){
     const settingsMenu = document.getElementById('settingsMenu');
-    const startMenu = document.getElementById('startMenu');
 
     hideMenu();
     settingsMenu.classList.remove('hide');
