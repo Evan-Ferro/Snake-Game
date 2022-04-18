@@ -291,7 +291,12 @@ function topScore(){
     const savedScores = localStorage.getItem('highscore') || '[]';
     let allScores = JSON.parse(savedScores);
     const topScore = allScores[0].score;
-    topScoreHolder.innerText = topScore;
+    if(allScores.length === 0){
+        return;
+    } else{
+        topScoreHolder.innerText = topScore;
+    }
+    console.log(allScores.length);
 }
 
 function scoreList(){
