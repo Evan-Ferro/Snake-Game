@@ -289,11 +289,11 @@ function highScore(){
 function topScore(){
     const topScoreHolder = document.getElementById('topScore');
     const savedScores = localStorage.getItem('highscore') || '[]';
-    let allScores = JSON.parse(savedScores);
-    const topScore = allScores[0].score;
+    let allScores = JSON.parse(savedScores); 
     if(allScores.length === 0){
-        return;
+        topScoreHolder.innerText = 0;
     } else{
+        const topScore = allScores[0].score;
         topScoreHolder.innerText = topScore;
     }
     console.log(allScores.length);
