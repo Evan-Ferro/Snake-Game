@@ -1010,7 +1010,7 @@ body{
 }
 
 .green{
-    background-color: green;
+    background-color: darkslategray;
 }
 
 .yellow{
@@ -1119,7 +1119,7 @@ input[type="radio"]::before {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-top: 4.1rem;
+    padding-top: 4.05rem;
 }
 
 .start-menu-snake-container{

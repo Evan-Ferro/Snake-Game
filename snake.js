@@ -103,11 +103,11 @@ function startGame(){
     snakeColor();
 
     const gameBoard = document.getElementById('gameBoard');
-    gameBoard.append(Snake);
     Snake.innerText = 'o o';
     Snake.style.color = 'white';
     Snake.style.textAlign = 'center';
     Snake.style.fontFamily = "cursive";
+    
     
     const appleWrapper = document.getElementById('appleWrapper');
     gameBoard.append(appleWrapper);
@@ -123,7 +123,9 @@ function startGame(){
     interval = setInterval(frame, t);
     setTimeout(() => {
         Snake.classList.add('snakeVisible');
-    }, 230);
+        gameBoard.append(Snake);
+    }, 200);
+
     console.log('Game Started');
     console.log(t);
 }
@@ -367,16 +369,16 @@ function snakeColor(){
         menusnake8.style.backgroundColor="blue";
     }
     if(document.getElementById('greenSnake').checked){
-        Snake.style.backgroundColor = "green";
-        menusnake.style.backgroundColor="green";
-        menusnake1.style.backgroundColor="green";
-        menusnake2.style.backgroundColor="green";
-        menusnake3.style.backgroundColor="green";
-        menusnake4.style.backgroundColor="green";
-        menusnake5.style.backgroundColor="green";
-        menusnake6.style.backgroundColor="green";
-        menusnake7.style.backgroundColor="green";
-        menusnake8.style.backgroundColor="green";
+        Snake.style.backgroundColor = "darkslategray";
+        menusnake.style.backgroundColor="darkslategray";
+        menusnake1.style.backgroundColor="darkslategray";
+        menusnake2.style.backgroundColor="darkslategray";
+        menusnake3.style.backgroundColor="darkslategray";
+        menusnake4.style.backgroundColor="darkslategray";
+        menusnake5.style.backgroundColor="darkslategray";
+        menusnake6.style.backgroundColor="darkslategray";
+        menusnake7.style.backgroundColor="darkslategray";
+        menusnake8.style.backgroundColor="darkslategray";
     }
     if(document.getElementById('yellowSnake').checked){
         Snake.style.backgroundColor = "goldenrod";
