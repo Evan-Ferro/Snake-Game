@@ -971,6 +971,7 @@ body{
     background-color: blanchedalmond;
     margin-top: 5%;
     width: 40%;
+    min-width: 300px;
     padding: 0.5rem;
 }
 
