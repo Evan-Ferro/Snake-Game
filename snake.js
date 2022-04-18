@@ -102,12 +102,12 @@ function startGame(){
     hideMenu();
     snakeColor();
 
-    
     const gameBoard = document.getElementById('gameBoard');
     gameBoard.append(Snake);
     Snake.innerText = 'o o';
     Snake.style.color = 'white';
     Snake.style.textAlign = 'center';
+    Snake.style.fontFamily = "cursive";
     
     const appleWrapper = document.getElementById('appleWrapper');
     gameBoard.append(appleWrapper);
@@ -329,7 +329,7 @@ function scoreList(){
 function snakeColor(){
     for(let i = 0; i < snakeBody.length; i++){
         if(document.getElementById('blueSnake').checked){
-            snakeBody[i].element.style.backgroundColor="blue";
+            snakeBody[i].element.style.backgroundColor="blue";  
         }
         if(document.getElementById('greenSnake').checked){
             snakeBody[i].element.style.backgroundColor="green";
@@ -344,26 +344,75 @@ function snakeColor(){
             snakeBody[i].element.style.backgroundColor="purple";
         }
     }
+    const menusnake = document.getElementById('menuSnake');
+    const menusnake1 = document.getElementById('menuSnake1');
+    const menusnake2 = document.getElementById('menuSnake2');
+    const menusnake3 = document.getElementById('menuSnake3');
+    const menusnake4 = document.getElementById('menuSnake4');
+    const menusnake5 = document.getElementById('menuSnake5');
+    const menusnake6 = document.getElementById('menuSnake6');
+    const menusnake7 = document.getElementById('menuSnake7');
+    const menusnake8 = document.getElementById('menuSnake8');
     
     if(document.getElementById('blueSnake').checked){
-        console.log('blue');
         Snake.style.backgroundColor = "blue";
+        menusnake.style.backgroundColor="blue";
+        menusnake1.style.backgroundColor="blue";
+        menusnake2.style.backgroundColor="blue";
+        menusnake3.style.backgroundColor="blue";
+        menusnake4.style.backgroundColor="blue";
+        menusnake5.style.backgroundColor="blue";
+        menusnake6.style.backgroundColor="blue";
+        menusnake7.style.backgroundColor="blue";
+        menusnake8.style.backgroundColor="blue";
     }
     if(document.getElementById('greenSnake').checked){
-        console.log('green');
         Snake.style.backgroundColor = "green";
+        menusnake.style.backgroundColor="green";
+        menusnake1.style.backgroundColor="green";
+        menusnake2.style.backgroundColor="green";
+        menusnake3.style.backgroundColor="green";
+        menusnake4.style.backgroundColor="green";
+        menusnake5.style.backgroundColor="green";
+        menusnake6.style.backgroundColor="green";
+        menusnake7.style.backgroundColor="green";
+        menusnake8.style.backgroundColor="green";
     }
     if(document.getElementById('yellowSnake').checked){
-        console.log('yellow');
         Snake.style.backgroundColor = "goldenrod";
+        menusnake.style.backgroundColor="goldenrod";
+        menusnake1.style.backgroundColor="goldenrod";
+        menusnake2.style.backgroundColor="goldenrod";
+        menusnake3.style.backgroundColor="goldenrod";
+        menusnake4.style.backgroundColor="goldenrod";
+        menusnake5.style.backgroundColor="goldenrod";
+        menusnake6.style.backgroundColor="goldenrod";
+        menusnake7.style.backgroundColor="goldenrod";
+        menusnake8.style.backgroundColor="goldenrod";
     }
-    if(document.getElementById('redSnake').checked){
-        console.log('red');
+    if(document.getElementById('redSnake').checked){        
         Snake.style.backgroundColor = "red";
+        menusnake.style.backgroundColor="red";
+        menusnake1.style.backgroundColor="red";
+        menusnake2.style.backgroundColor="red";
+        menusnake3.style.backgroundColor="red";
+        menusnake4.style.backgroundColor="red";
+        menusnake5.style.backgroundColor="red";
+        menusnake6.style.backgroundColor="red";
+        menusnake7.style.backgroundColor="red";
+        menusnake8.style.backgroundColor="red";
     }
     if(document.getElementById('purpleSnake').checked){
-        console.log('purple');
         Snake.style.backgroundColor = "purple";
+        menusnake.style.backgroundColor="purple";
+        menusnake1.style.backgroundColor="purple";
+        menusnake2.style.backgroundColor="purple";
+        menusnake3.style.backgroundColor="purple";
+        menusnake4.style.backgroundColor="purple";
+        menusnake5.style.backgroundColor="purple";
+        menusnake6.style.backgroundColor="purple";
+        menusnake7.style.backgroundColor="purple";
+        menusnake8.style.backgroundColor="purple"; 
     }
 }
 

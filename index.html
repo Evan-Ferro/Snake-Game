@@ -11,7 +11,76 @@
     <section class="main-container">
         <div id="startMenu" class="container">
             <div class="title-wrap">
-                <p class="title-text">Snake Game</p>
+                <p class="title-text margin-bot-0">Snake Game</p>
+            </div>
+            <div class="start-menu-snake-container">
+                <div class="start-menu-snake-wrap">
+                    <div class="animated-snake-wrap animated-snake-head-wrap">
+                        <span id="menuSnake" class="animated-snake-head">
+                            <p class="snake-eyes">o o</p>
+                        </span>
+                    </div>
+                    <div class="animated-snake-wrap">
+                        <span id="menuSnake1" class="animated-snake"></span>
+                    </div>
+                    <div class="animated-snake-wrap second-snake-wrap">
+                        <span id="menuSnake2" class="animated-snake second-snake"></span>
+                    </div>
+                    <div class="animated-snake-wrap third-snake-wrap">
+                        <span id="menuSnake3" class="animated-snake third-snake"></span>
+                    </div>
+                    <div class="animated-snake-wrap fourth-snake-wrap">
+                        <span id="menuSnake4" class="animated-snake fourth-snake"></span>
+                    </div>
+                    <div class="animated-snake-wrap">
+                        <span id="menuSnake5" class="animated-snake"></span>
+                    </div>
+                    <div class="animated-snake-wrap second-snake-wrap">
+                        <span id="menuSnake6" class="animated-snake second-snake"></span>
+                    </div>
+                    <div class="animated-snake-wrap third-snake-wrap">
+                        <span id="menuSnake7" class="animated-snake third-snake"></span>
+                    </div>
+                    <div class="animated-snake-wrap fourth-snake-wrap">
+                        <span id="menuSnake8" class="animated-snake fourth-snake"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="start-background-wrap">
+                <div class="start-background">
+                    <div class="wrapper-top">
+                        <span class="menu-piece"></span>
+                        <span class="every-other"></span>
+                        <span class="menu-piece"></span>
+                        <span class="every-other"></span>
+                        <span class="menu-piece"></span>
+                        <span class="every-other"></span>
+                        <span class="menu-piece"></span>
+                        <span class="every-other"></span>
+                        <span class="menu-piece"></span>
+                        <span class="every-other"></span>
+                        <span class="menu-piece"></span>
+                        <span class="every-other"></span>
+                        <span class="menu-piece"></span>
+                    </div>
+                </div>
+                <div class="start-background">
+                    <div class="wrapper-bottom">
+                        <span class="every-other"></span>
+                        <span class="menu-piece"></span>
+                        <span class="every-other"></span>
+                        <span class="menu-piece"></span>
+                        <span class="every-other"></span>
+                        <span class="menu-piece"></span>
+                        <span class="every-other"></span>
+                        <span class="menu-piece"></span>
+                        <span class="every-other"></span>
+                        <span class="menu-piece"></span>
+                        <span class="every-other"></span>
+                        <span class="menu-piece"></span>
+                        <span class="every-other"></span>
+                    </div>
+                </div>
             </div>
             <div class="score-box">
                 <div class="settings-wrap">
@@ -48,7 +117,7 @@
                     <span class="snake red"></span>
                 </label>
                 <div class="score-box margin-top">       
-                    <div class="high-score"><button onclick="hideSettings()" class="hs-btn"> Go Back </button></div>
+                    <div class="high-score"><button onclick="hideSettings(), snakeColor()" class="hs-btn"> Go Back </button></div>
                     <div class="start-game"><button onclick="settingsStart()" class="play-btn"> Play Game </button></div>
                 </div>
             </div>

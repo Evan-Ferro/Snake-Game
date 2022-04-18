@@ -364,10 +364,10 @@ body{
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 90%;
     height: 60%;
     margin: auto;
-    margin-top: 2%;
+    margin-bottom: 5%;
 }
 
 .container{
@@ -380,7 +380,8 @@ body{
     background-color: blanchedalmond;
     margin-top: 10%;
     padding: 1rem;
-    width: 40%;
+    width: 45%;
+    min-width: 300px;
 }
 
 .title-wrap{
@@ -389,9 +390,9 @@ body{
 
 .title-text{
     font-family: cursive;
-    font-size: 3.5rem;
+    font-size: 4rem;
     color: black;
-    font-weight: 400;
+    font-weight: 600;
     margin-top: 0;
 }
 
@@ -576,6 +577,7 @@ body{
     padding: 0.5rem;
     padding-bottom: 1rem;
     background-color: blanchedalmond;
+    margin-top: 10%;
 }
 
 .end-game{
@@ -750,7 +752,8 @@ body{
     border-radius: 6px;
     background-color: blanchedalmond;
     margin-top: 10%;
-    width: 40%;
+    width: 45%;
+    min-width: 310px;
     padding: 0.5rem;
 }
 
@@ -966,7 +969,7 @@ body{
     border: 5px solid black;
     border-radius: 6px;
     background-color: blanchedalmond;
-    margin-top: 10%;
+    margin-top: 5%;
     width: 40%;
     padding: 0.5rem;
 }
@@ -1061,11 +1064,9 @@ input[type="radio"] {
 }
 
 input[type="radio"] {
-/* ...existing styles */
-
-display: grid;
-place-content: center;
-}
+    display: grid;
+    place-content: center;
+} 
 
 input[type="radio"]::before {
     content: "";
@@ -1078,19 +1079,18 @@ input[type="radio"]::before {
 }
 
 input[type="radio"] {
-    /* ...existing styles */
     display: grid;
     place-content: center;
 }
 
 input[type="radio"]::before {
-content: "";
-width: 0.65em;
-height: 0.65em;
-border-radius: 50%;
-transform: scale(0);
-transition: 120ms transform ease-in-out;
-box-shadow: inset 1em 1em var(--form-control-color);
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
 }
 
 input[type="radio"]:checked::before {
@@ -1110,6 +1110,198 @@ input[type="radio"]::before {
     margin-bottom: 0.6rem;
 }
 
+/* Start Menu snake animation*/
+
+.start-menu-snake-wrap{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4.1rem;
+}
+
+.start-menu-snake-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 3rem;
+    padding: 0.5rem;
+}
+
+.animated-snake-wrap{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+}
+
+.animated-snake{
+    animation: snakeAnimate 1.5s linear infinite alternate;
+    justify-content: center;
+    display: block;
+    background-color: blue;
+    border-radius: 6px;
+    position: relative;
+    height: 28px;
+    width: 28px;
+    text-align: center;
+    z-index: 1;
+}
+
+.animated-snake-head-wrap{
+    transform: rotate(90deg);
+}
+
+.animated-snake-head{
+    animation: snakeHeadAnimate 1.5s linear infinite alternate;
+    justify-content: center;
+    color: white;
+    display: block;
+    font-family: cursive;
+    background-color: blue;
+    border-radius: 6px;
+    position: relative;
+    height: 28px;
+    width: 28px;
+    text-align: center;
+    z-index: 1;
+}
+
+.second-snake{
+    animation: secondAnimate 1.5s linear infinite alternate;
+}
+
+.second-snake-wrap{
+   margin-top: 0px;
+}
+
+.third-snake{
+    animation: thirdAnimate 1.5s linear infinite alternate;  
+    
+}
+
+.third-snake-wrap{
+    margin-top: 0px;
+}
+
+.fourth-snake{
+    animation: fourthAnimate 1.5s linear infinite alternate;
+}
+
+.fourth-snake-wrap{
+    margin-top: 0px;
+}
+
+.snake-eyes{
+    margin-top: 0.6rem;
+}
+
+
+
+@keyframes snakeHeadAnimate{
+    from{
+        transform: translateX(20%);
+    }
+    to{
+        transform: translateX(80%);
+    }
+}
+
+@keyframes snakeAnimate{
+    from{
+        transform: translateY(10%);
+    }
+    to{
+        transform: translateY(90%);
+    }
+}
+
+@keyframes secondAnimate{
+    from{
+        transform: translateY(11%);
+    }
+    to{
+        transform: translateY(98%);
+    }
+}
+
+@keyframes thirdAnimate{
+    from{
+        transform: translateY(8%);
+    }
+    to{
+        transform: translateY(94%);
+    }
+}
+
+@keyframes fourthAnimate{
+    from{
+        transform: translateY(3%);
+    }
+    to{
+        transform: translateY(98%);
+    }
+}
+
+.start-background-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 3rem;
+    margin-bottom: 10%;
+}
+
+.start-background{
+    display: flex;
+    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.menu-piece{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 28px;
+    width: 28px;
+    background-color: white;
+    border: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.every-other{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 28px;
+    width: 28px;
+    background-color: darkolivegreen;
+    border: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.wrapper-top{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin-left: 0.5rem;
+}
+
+.wrapper-bottom{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin-left: 0.5rem;
+}
+
 
 /* The Apple growing & shrinking animation*/
 .appleScale{
@@ -1127,4 +1319,8 @@ input[type="radio"]::before {
   0%   {transform: scale(1.15);}
   
   100% {transform: scale(0.85);}
+}
+
+.margin-bot-0{
+    margin-bottom: 0;
 }
