@@ -776,7 +776,7 @@ body{
 }
 
 .inside-high-score{
-    margin-bottom: 0;
+    margin-bottom: 1.2rem;
 }
 
 .margin-top{
@@ -804,11 +804,8 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0.5rem;
-    border: 4px solid black;
-    border-radius: 6px;
-    background-color: steelblue;
-    margin-bottom: 1%;
+    padding: 1.2rem;
+    background-color: #45814b6b;
 }
 
 .title-score-wrap{
@@ -817,7 +814,7 @@ body{
     flex-direction: row;
     justify-content: space-evenly;
     margin-bottom: 2%;
-    margin-top: 4rem;
+    margin-top: 3rem;
 }
 
 .placement-title{
@@ -1315,9 +1312,11 @@ input[type="radio"]::before {
 
 .high-score-wrapper{
     display: block;
-    margin-bottom: 8%;
+    margin-bottom: 4%;
     margin-right: 9%;
     margin-left: 9%;
+    border-radius: 2px;
+    border: 1px solid #45814b6b;
 }
 
 .start-background-wrap{
