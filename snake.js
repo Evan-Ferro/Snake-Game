@@ -352,7 +352,7 @@ function scoreList(){
 function snakeColor(){
     for(let i = 0; i < snakeBody.length; i++){
         if(document.getElementById('blueSnake').checked){
-            snakeBody[i].element.style.backgroundColor="blue";  
+            snakeBody[i].element.style.backgroundColor="0061ff";  
         }
         if(document.getElementById('greenSnake').checked){
             snakeBody[i].element.style.backgroundColor="green";
