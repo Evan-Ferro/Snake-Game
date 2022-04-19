@@ -11,6 +11,8 @@ let appleX = 5;
 let appleY = 7;
 const snakeBody = [];
 let direction;
+let current;
+let previous;
 let paused = false;
 let t = 200;
 let endGameCalled = false;
@@ -22,25 +24,25 @@ createInterval();
 function createInterval(){  
     document.addEventListener('keydown', (event) => {
         if(event.key === 'w' || event.key === 'ArrowUp'){
-            if(direction !== 'down'){
+            if(previous !== 'down'){
                 direction = 'up';
                 removeMovement();
             }            
         }
         else if(event.key === 'a' || event.key === 'ArrowLeft'){
-            if(direction !== 'right'){
+            if(previous !== 'right'){
                 direction = 'left';
                 removeMovement();
             }             
         }
         else if(event.key === 's' || event.key === 'ArrowDown'){
-            if(direction !== 'up'){
+            if(previous !== 'up'){
                 direction = 'down';
                 removeMovement();
             }             
         }
         else if(event.key === 'd' || event.key === 'ArrowRight'){
-            if(direction !== 'left'){
+            if(previous !== 'left'){
                 direction = 'right';
                 removeMovement();  
             } 
@@ -52,6 +54,79 @@ function createInterval(){
             resumeGame();
         } 
     }); 
+}
+
+function updateDirection(){
+    previous = current;
+}
+
+function frame(){
+   
+    const scoreBox = document.getElementById('score');
+    const endScore = document.getElementById('endScore');
+
+    if(paused === true || endGameCalled === true){
+        return;
+    }
+
+    let angle;
+    newSnake();
+    
+
+    if(direction === 'up'){
+        snakeY -= 1;
+        angle = 0;
+    }
+    if(direction === 'left'){
+        snakeX -= 1;
+        angle = 270; 
+    }
+    if(direction === 'down'){
+        snakeY += 1;
+        angle = 180; 
+    }
+    if(direction === 'right'){
+        snakeX += 1;
+        angle = 90;
+    }
+    previous = direction;
+
+    draw(Snake, snakeX, snakeY, angle);
+    snakeBoundaries();
+    for(let i =0; i < snakeBody.length; i++){
+        if(snakeX === snakeBody[i].x && snakeY === snakeBody[i].y){
+            setTimeout(endGame, t);
+            break;
+        }
+    }
+
+    if(snakeX === appleX && snakeY === appleY){
+        score ++;
+        scoreBox.innerText = score;
+        endScore.innerText = score;
+
+        if(score % 5 === 0){
+            t = Math.floor(t * 0.95);
+            clearInterval(interval);
+            interval = setInterval(frame, t);
+            Snake.style.transitionDuration = `${t}ms`;
+            for(let i = 0; i < snakeBody.length; i++){
+                snakeBody[i].element.style.transitionDuration = `${t}ms`;
+            }
+            console.log(`${t}ms`);
+        }
+        buildSnake();
+
+        appleX = getRandomInt(0, 20);
+        appleY = getRandomInt(0,16);
+        
+        while(checkApple(appleX, appleY)){
+            appleX = getRandomInt(0, 20);
+            appleY = getRandomInt(0, 16);
+        }
+        draw(appleWrapper, appleX, appleY);
+        snakeColor();
+    }
 }
     
 function showGrid(){
@@ -114,6 +189,9 @@ function startGame(){
     appleWrapper.append(Apple);
     Apple.classList.add('appleScale');
     Apple.innerHTML = '&#127822;'
+
+    const html = document.getElementById('html');
+    html.classList.add('mainBackground');
     
     appleWrapper.classList.add('appleVisible');
     draw(appleWrapper, appleX, appleY);
@@ -130,70 +208,7 @@ function startGame(){
     console.log(t);
 }
 
-function frame(){
-    const scoreBox = document.getElementById('score');
-    const endScore = document.getElementById('endScore');
 
-    if(paused === true || endGameCalled === true){
-        return;
-    }
-    let angle;
-    newSnake();
-    
-    if(direction === 'up'){
-        snakeY -= 1;
-        angle = 0;
-    }
-    if(direction === 'left'){
-        snakeX -= 1;
-        angle = 270; 
-    }
-    if(direction === 'down'){
-        snakeY += 1;
-        angle = 180; 
-    }
-    if(direction === 'right'){
-        snakeX += 1;
-        angle = 90;
-    }
-    
-    draw(Snake, snakeX, snakeY, angle);
-    snakeBoundaries();
-    for(let i =0; i < snakeBody.length; i++){
-        if(snakeX === snakeBody[i].x && snakeY === snakeBody[i].y){
-            setTimeout(endGame, t);
-            break;
-        }
-    }
-
-    if(snakeX === appleX && snakeY === appleY){
-        score ++;
-        scoreBox.innerText = score;
-        endScore.innerText = score;
-
-        if(score % 5 === 0){
-            t = Math.floor(t * 0.95);
-            clearInterval(interval);
-            interval = setInterval(frame, t);
-            Snake.style.transitionDuration = `${t}ms`;
-            for(let i = 0; i < snakeBody.length; i++){
-                snakeBody[i].element.style.transitionDuration = `${t}ms`;
-            }
-            console.log(`${t}ms`);
-        }
-        buildSnake();
-
-        appleX = getRandomInt(0, 20);
-        appleY = getRandomInt(0,16);
-        
-        while(checkApple(appleX, appleY)){
-            appleX = getRandomInt(0, 20);
-            appleY = getRandomInt(0, 16);
-        }
-        draw(appleWrapper, appleX, appleY);
-        snakeColor();
-    }
-}
 
 function checkApple(x, y){
     if(snakeX === x && snakeY === y){
@@ -257,6 +272,9 @@ function endGame(){
     gameOver.classList.add('show');
     gameOver.classList.remove('hide');
 
+    const html = document.getElementById('html');
+    html.classList.remove('mainBackground');
+
     const Grid = document.getElementById('snakeGrid');
     Grid.classList.add('hide');
 }
@@ -288,9 +306,13 @@ function highScore(){
 function topScore(){
     const topScoreHolder = document.getElementById('topScore');
     const savedScores = localStorage.getItem('highscore') || '[]';
-    let allScores = JSON.parse(savedScores);
-    const topScore = allScores[0].score;
-    topScoreHolder.innerText = topScore;
+    let allScores = JSON.parse(savedScores); 
+    if(allScores.length === 0){
+        topScoreHolder.innerText = 0;
+    } else{
+        const topScore = allScores[0].score;
+        topScoreHolder.innerText = topScore;
+    }
 }
 
 function scoreList(){
@@ -356,16 +378,16 @@ function snakeColor(){
     const menusnake8 = document.getElementById('menuSnake8');
     
     if(document.getElementById('blueSnake').checked){
-        Snake.style.backgroundColor = "blue";
-        menusnake.style.backgroundColor="blue";
-        menusnake1.style.backgroundColor="blue";
-        menusnake2.style.backgroundColor="blue";
-        menusnake3.style.backgroundColor="blue";
-        menusnake4.style.backgroundColor="blue";
-        menusnake5.style.backgroundColor="blue";
-        menusnake6.style.backgroundColor="blue";
-        menusnake7.style.backgroundColor="blue";
-        menusnake8.style.backgroundColor="blue";
+        Snake.style.backgroundColor = "#0061ff";
+        menusnake.style.backgroundColor="#0061ff";
+        menusnake1.style.backgroundColor="#0061ff";
+        menusnake2.style.backgroundColor="#0061ff";
+        menusnake3.style.backgroundColor="#0061ff";
+        menusnake4.style.backgroundColor="#0061ff";
+        menusnake5.style.backgroundColor="#0061ff";
+        menusnake6.style.backgroundColor="#0061ff";
+        menusnake7.style.backgroundColor="#0061ff";
+        menusnake8.style.backgroundColor="#0061ff";
     }
     if(document.getElementById('greenSnake').checked){
         Snake.style.backgroundColor = "darkslategray";
@@ -430,7 +452,7 @@ function hideSettings(){
     const startMenu = document.getElementById('startMenu');
 
     startMenu.classList.remove('hide');
-    startMenu.classList.add('show');
+    startMenu.classList.add('flex');
     settingsMenu.classList.remove('show');
     settingsMenu.classList.add('hide');
 }
@@ -438,7 +460,7 @@ function hideSettings(){
 function settingsStart(){
     startGame();
     const settingsMenu = document.getElementById('settingsMenu');
-    settingsMenu.classList.remove('show');
+    settingsMenu.classList.remove('flex');
     settingsMenu.classList.add('hide');
 }
     

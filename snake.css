@@ -375,25 +375,40 @@ body{
     margin: auto;
     display: flex;
     flex-direction: column;
-    border: 5px solid black;
+    align-items: center;
+    border: 7px solid black;
     border-radius: 6px;
-    background-color: blanchedalmond;
-    margin-top: 10%;
-    padding: 1rem;
-    width: 45%;
+    background-color: #4d5d4f;
+    margin-top: 6.5rem;
+    padding: 2rem;
+    width: 55%;
     min-width: 300px;
 }
 
 .title-wrap{
     text-align: center;
+    margin-bottom: 3rem;
 }
 
 .title-text{
     font-family: cursive;
-    font-size: 4rem;
-    color: black;
+    font-size: 6rem;
+    color: white;
     font-weight: 600;
     margin-top: 0;
+    text-shadow: 8px 5px 10px black;
+}
+
+@media (max-width: 1210px){
+    .title-text{
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 977px){
+    .title-text{
+        font-size: 3.1rem;
+    }
 }
 
 .score-box{
@@ -576,14 +591,14 @@ body{
     border: 4px solid black;
     padding: 0.5rem;
     padding-bottom: 1rem;
-    background-color: blanchedalmond;
+    background-color: #4d5d4f;
     margin-top: 10%;
 }
 
 .end-game{
     position: relative;
     margin: auto;
-    width: 50%;
+    width: 70%;
     text-align: center;
     font-size: 2.5rem;
     font-weight: 700;
@@ -595,16 +610,19 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-top: 3rem;
 }
 
 .your-score{
-    margin-bottom: 0.5rem;
+    margin-bottom: 3.5rem;
     margin-top: 0.5rem;
+    font-size: 4rem;
 }
 
 .game-over{
-    margin-bottom: 0;
+    margin-bottom: 2.5rem;
     margin-top: 1rem;
+    font-size: 4rem;
 }
 
 .snakeVisible{
@@ -613,7 +631,7 @@ body{
     height: 28px;
     width: 28px;
     border-radius: 20%;
-    background-color: blue;
+    background-color: #0061ff;
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
     transition: all 0.2s linear;
@@ -624,7 +642,7 @@ body{
     position: absolute;
     height: 28px;
     width: 28px;
-    background-color: blue;
+    background-color: #0061ff;
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
     transition: all 0.2s linear;
@@ -666,7 +684,7 @@ body{
     font-family: cursive;
     font-weight: 800;
     font-size: 2.5rem;
-    margin-bottom: 0;
+    margin-bottom: 3rem;
     margin-top: 0.5rem;
 }
 
@@ -685,14 +703,15 @@ body{
 .pause-menu-wrap{
     display: block;
     position: absolute;
-    width: 50%;
-    height: 30%;
-    margin: 22%;
+    width: 60%;
+    height: 35%;
+    margin: 16.5%;
     z-index: 1;
     background-color: rgba(211, 211, 211, 0.892);
     border-radius: 6px;
     border: 6px solid black;
     margin-top: 11rem;
+    z-index: 2;
 }
 
 .options-wrap{
@@ -700,17 +719,16 @@ body{
     flex-direction: row;
     padding: 0.5rem;
     justify-content: space-evenly;
-    margin-top: 10%;
 }
 
 .resume-btn{
     color: white;
-    background-color: darkslategray;
+    background-color: #4d5d4f;
     border: 3px solid black;
-    padding: 0.5rem;
+    padding: 0.8rem;
     font-family: cursive;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     border-radius: 6px;
 }
 
@@ -731,13 +749,13 @@ body{
 }
 
 .quit-btn{
-    background-color: darkslategray;
+    background-color: #4d5d4f;
     color: white;
     border: 3px solid black;
-    padding: 0.5rem;
+    padding: 0.8rem;
     font-family: cursive;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     border-radius: 6px;
     width: 20%;
     text-align: center;
@@ -830,14 +848,14 @@ body{
 .user-name{
     color: black;
     font-family: cursive;
-    font-size: 1.1rem;
+    font-size: 1.7rem;
     margin-top: 0.4rem;
 }
 
 .submit-score{
     position: absolute;
-    right: -6.4rem;
-    top: 6rem;
+    right: -4rem;
+    top: 15rem;
     color: black;
     background-color: white;
     border: 2px solid black;
@@ -872,7 +890,7 @@ body{
 #playerName{
     position: relative;
     align-items: center;
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     font-family: 'roboto', sans-serif;
 }
 
@@ -968,7 +986,7 @@ body{
     justify-content: center;
     border: 5px solid black;
     border-radius: 6px;
-    background-color: blanchedalmond;
+    background-color: #4d5d4f;
     margin-top: 5%;
     width: 40%;
     min-width: 300px;
@@ -987,11 +1005,11 @@ body{
 .snake-color{
     display: flex;
     flex-direction: row;
-    padding: 1rem;
+    padding: 2rem;
     width: 80%;
     justify-content: space-around;
     align-items: center;
-    background-color: rgba(240, 217, 182, 0.59);
+    background-color: #4059436b;
     padding: 1rem;
 }
 
@@ -1000,7 +1018,7 @@ body{
     height: 28px;
     width: 28px;
     border-radius: 20%;
-    background-color: blue;
+    background-color: #0061ff;
     text-align: center;
     color: white;
 }
@@ -1131,6 +1149,14 @@ input[type="radio"]::before {
     padding: 0.5rem;
 }
 
+.snake-menu-size{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
 .animated-snake-wrap{
     position: relative;
     display: flex;
@@ -1144,13 +1170,20 @@ input[type="radio"]::before {
     animation: snakeAnimate 1.5s linear infinite alternate;
     justify-content: center;
     display: block;
-    background-color: blue;
+    background-color: #0061ff;
     border-radius: 6px;
     position: relative;
-    height: 28px;
-    width: 28px;
+    height: 34px;
+    width: 34px;
     text-align: center;
     z-index: 1;
+}
+
+@media (max-width: 1210px){
+    .animated-snake{
+        height: 30px;
+        width: 30px;
+    }
 }
 
 .animated-snake-head-wrap{
@@ -1163,13 +1196,35 @@ input[type="radio"]::before {
     color: white;
     display: block;
     font-family: cursive;
-    background-color: blue;
+    background-color: #0061ff;
     border-radius: 6px;
     position: relative;
-    height: 28px;
-    width: 28px;
+    height: 34px;
+    width: 34px;
     text-align: center;
     z-index: 1;
+}
+
+@media (max-width: 1210px){
+    .animated-snake-head{
+        height: 30px;
+        width: 30px;
+    }
+    .snake-eyes{
+        margin-top: 0.7rem !important;
+        font-size: 0.8rem !important;
+    }
+}
+
+@media (max-width: 977px){
+    .animated-snake-head{
+        height: 28px;
+        width: 28px;
+    }
+    .snake-eyes{
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
 }
 
 .second-snake{
@@ -1198,7 +1253,11 @@ input[type="radio"]::before {
 }
 
 .snake-eyes{
-    margin-top: 0.6rem;
+    display: block;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0;
 }
 
 
@@ -1268,12 +1327,26 @@ input[type="radio"]::before {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 28px;
-    width: 28px;
+    height: 36px;
+    width: 36px;
     background-color: white;
     border: 1px solid black;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+}
+
+@media (max-width: 1210px){
+    .menu-piece{
+        height: 30px;
+        width: 30px;
+    }
+}
+
+@media (max-width: 977px){
+    .menu-piece{
+        height: 24px;
+        width: 24px;
+    }
 }
 
 .every-other{
@@ -1281,28 +1354,45 @@ input[type="radio"]::before {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 28px;
-    width: 28px;
+    height: 36px;
+    width: 36px;
     background-color: darkolivegreen;
     border: 1px solid black;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
 }
 
+@media (max-width: 1210px){
+    .every-other{
+        height: 30px;
+        width: 30px;
+    }
+}
+
+@media (max-width: 977px){
+    .every-other{
+        height: 24px;
+        width: 24px;
+    }
+}
+
 .wrapper-top{
     display: flex;
     justify-content: center;
-    width: 90%;
     margin-left: 0.5rem;
+    box-shadow: 0px 0px 3px 2px black;
 }
 
 .wrapper-bottom{
     display: flex;
     justify-content: center;
-    width: 90%;
     margin-left: 0.5rem;
+    box-shadow: 0px 0px 3px 2px black;
 }
 
+.mainBackground{
+    background-color: #4d5d4f;
+}
 
 /* The Apple growing & shrinking animation*/
 .appleScale{
