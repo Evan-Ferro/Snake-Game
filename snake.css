@@ -1435,32 +1435,33 @@ input[type="radio"]::before {
     box-shadow: 0px 0px 3px 2px black;
 }
 
-<<<<<<< HEAD
-.snake-up{
-    display: flex;
-    flex-direction: column;
-}
-
-.snake-down{
-    display: flex;
-    flex-direction: column-reverse;
-}
-
-.snake-left{
-    display: flex;
-    flex-direction: row;
-}
-
-.snake-right{
-    display: flex;
-    flex-direction: row-reverse;
-}
-
-=======
 .mainBackground{
     background-color: #4d5d4f;
 }
->>>>>>> 90bbb719518a8c06d91b46fd275ffd888d2132aa
+
+/* Snake eyes movement*/
+.snakeEyes-up{
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+    transition-duration: 0.1s;
+}
+
+.snakeEyes-down{
+    margin-top: 10px;
+    transform: rotate(0deg);
+}
+
+.snakeEyes-left{
+    margin-top: 5px;
+    margin-right: 6px;
+    transform: rotate(90deg);
+}
+
+.snakeEyes-right{
+    margin-top: 0.27rem;
+    margin-left: 0.4rem;
+    transform: rotate(270deg);
+}
 
 /* The Apple growing & shrinking animation*/
 .appleScale{
