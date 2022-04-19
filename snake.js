@@ -131,7 +131,6 @@ function startGame(){
 }
 
 function frame(){
-   
     const scoreBox = document.getElementById('score');
     const endScore = document.getElementById('endScore');
 
