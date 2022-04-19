@@ -768,8 +768,8 @@ body{
     flex-direction: column;
     border: 5px solid black;
     border-radius: 6px;
-    background-color: blanchedalmond;
-    margin-top: 10%;
+    background-color: #4d5d4f;
+    margin-top: 2%;
     width: 45%;
     min-width: 310px;
     padding: 0.5rem;
@@ -783,11 +783,17 @@ body{
     margin-top: 3rem;
 }
 
+.settings-title{
+    text-shadow: 8px 5px 10px black;
+    font-size: 4rem !important;
+}
+
+
 .title-score{
     text-align: center;
     font-family: cursive;
     font-size: 2.4rem;
-    color: black;
+    color: white;
     font-weight: 600;
     margin-top: 0.5rem;
     margin-bottom: 2.3rem;
@@ -812,25 +818,28 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
+    margin-top: 4rem;
 }
 
 .placement-title{
     font-family: cursive;
-    font-size: 1.4rem;
-    font-weight: 600;
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-right: 2.1rem;
 }
 
 .player-title{
     font-family: cursive;
-    font-size: 1.4rem;
-    font-weight: 600;
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-right: 4.2rem;
 }
 
 .score-title{
     font-family: cursive;
-    font-size: 1.4rem;
-    font-weight: 600;
+    font-size: 1.8rem;
+    font-weight: 900;
 }
 
 .player-position{
@@ -987,7 +996,7 @@ body{
     border: 5px solid black;
     border-radius: 6px;
     background-color: #4d5d4f;
-    margin-top: 5%;
+    margin-top: 1%;
     width: 40%;
     min-width: 300px;
     padding: 0.5rem;
@@ -1006,11 +1015,16 @@ body{
     display: flex;
     flex-direction: row;
     padding: 2rem;
-    width: 80%;
     justify-content: space-around;
     align-items: center;
-    background-color: #4059436b;
-    padding: 1rem;
+    background-color: #466c4a6b;
+    padding: 1.5rem;
+}
+
+.snake-color-wrap{
+    width: 80%;
+    border-radius: 6px;
+    border: 4px solid black;
 }
 
 .snake{
@@ -1024,7 +1038,7 @@ body{
 }
 
 .purple{
-    background-color: purple;
+    background-color: #921192;
 }
 
 .green{
@@ -1040,12 +1054,9 @@ body{
 }
 
 input[type="radio"] {
-    /* Add if not using autoprefixer */
     -webkit-appearance: none;
     appearance: none;
-    /* For iOS < 15 to remove gradient background */
     background-color: #fff;
-    /* Not removed via appearance */
     margin: 0;
 }
 
@@ -1117,14 +1128,11 @@ transform: scale(1);
 }
 
 input[type="radio"]::before {
-    /* ...existing styles */
-  
-    /* Windows High Contrast Mode */
     background-color: CanvasText;
 }
 
 .small-txt{
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     margin-top: 0;
     margin-bottom: 0.6rem;
 }

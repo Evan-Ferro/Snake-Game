@@ -112,29 +112,31 @@
             </div>
         </div>
         <div id="settingsMenu" class="snake-settings-container hide">
-            <h2 class="title-score">Settings</h2>
+            <h2 class="title-score settings-title">Settings</h2>
             <div class="snake-settings-wrap">
                 <p class="title-score small-txt">Snake Color</p>
-                <label class="snake-color">
-                    <input checked value="blue" id="blueSnake" name="snakeColor" class="check-box" type="radio">
-                    <span class="snake"></span>
-                </label>
-                <label class="snake-color">
-                    <input value="purple" id="purpleSnake" name="snakeColor" class="check-box" type="radio">
-                    <span class="snake purple"></span>
-                </label>
-                <label class="snake-color">
-                    <input value="green" id="greenSnake" name="snakeColor" class="check-box" type="radio">
-                    <span class="snake green"></span>
-                </label>
-                <label class="snake-color">
-                    <input value="yellow" id="yellowSnake" name="snakeColor" class="check-box" type="radio">
-                    <span class="snake yellow"></span>
-                </label>
-                <label class="snake-color">
-                    <input value="red" id="redSnake" name="snakeColor" class="check-box" type="radio">
-                    <span class="snake red"></span>
-                </label>
+                <div class="snake-color-wrap">
+                    <label class="snake-color">
+                        <input checked value="blue" id="blueSnake" name="snakeColor" class="check-box" type="radio">
+                        <span class="snake"></span>
+                    </label>
+                    <label class="snake-color">
+                        <input value="purple" id="purpleSnake" name="snakeColor" class="check-box" type="radio">
+                        <span class="snake purple"></span>
+                    </label>
+                    <label class="snake-color">
+                        <input value="green" id="greenSnake" name="snakeColor" class="check-box" type="radio">
+                        <span class="snake green"></span>
+                    </label>
+                    <label class="snake-color">
+                        <input value="yellow" id="yellowSnake" name="snakeColor" class="check-box" type="radio">
+                        <span class="snake yellow"></span>
+                    </label>
+                    <label class="snake-color">
+                        <input value="red" id="redSnake" name="snakeColor" class="check-box" type="radio">
+                        <span class="snake red"></span>
+                    </label>
+                </div>
                 <div class="score-box margin-top">       
                     <div class="high-score"><button onclick="hideSettings(), snakeColor()" class="hs-btn"> Go Back </button></div>
                 </div>
@@ -155,7 +157,7 @@
         <div id="scoreBoard" class="high-score-container hide">
             <div id="high-score-list" class="inside-high-score">
                 <div class="current-score">
-                    <p class="title-score">High Scores</p>
+                    <p class="title-score settings-title">High Scores</p>
                 </div>
                 <!-- <span id="score" class="latestScore"> 0 </span> -->
                 <div class="title-score-wrap">

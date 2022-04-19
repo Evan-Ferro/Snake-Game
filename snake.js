@@ -328,7 +328,7 @@ function scoreList(){
     let allScores = JSON.parse(savedScores);
     allScores.push(result);
     allScores.sort((a, b) => b.score - a.score);
-    allScores = allScores.slice(0, 5);
+    allScores = allScores.slice(0, 7);
     localStorage.setItem('highscore', JSON.stringify(allScores));
 
     for(let i = 0; i < allScores.length; i++){
@@ -364,7 +364,7 @@ function snakeColor(){
             snakeBody[i].element.style.backgroundColor="red";
         }
         if(document.getElementById('purpleSnake').checked){
-            snakeBody[i].element.style.backgroundColor="purple";
+            snakeBody[i].element.style.backgroundColor="#921192";
         }
     }
     const menusnake = document.getElementById('menuSnake');
@@ -426,16 +426,16 @@ function snakeColor(){
         menusnake8.style.backgroundColor="red";
     }
     if(document.getElementById('purpleSnake').checked){
-        Snake.style.backgroundColor = "purple";
-        menusnake.style.backgroundColor="purple";
-        menusnake1.style.backgroundColor="purple";
-        menusnake2.style.backgroundColor="purple";
-        menusnake3.style.backgroundColor="purple";
-        menusnake4.style.backgroundColor="purple";
-        menusnake5.style.backgroundColor="purple";
-        menusnake6.style.backgroundColor="purple";
-        menusnake7.style.backgroundColor="purple";
-        menusnake8.style.backgroundColor="purple"; 
+        Snake.style.backgroundColor = "#921192";
+        menusnake.style.backgroundColor="#921192";
+        menusnake1.style.backgroundColor="#921192";
+        menusnake2.style.backgroundColor="#921192";
+        menusnake3.style.backgroundColor="#921192";
+        menusnake4.style.backgroundColor="#921192";
+        menusnake5.style.backgroundColor="#921192";
+        menusnake6.style.backgroundColor="#921192";
+        menusnake7.style.backgroundColor="#921192";
+        menusnake8.style.backgroundColor="#921192"; 
     }
 }
 
