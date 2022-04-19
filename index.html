@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html id="html" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -47,59 +47,61 @@
                 </div>
             </div>
             <div class="start-background-wrap">
-                <div class="start-background">
-                    <div class="wrapper-top">
-                        <span class="menu-piece"></span>
-                        <span class="every-other"></span>
-                        <span class="menu-piece"></span>
-                        <span class="every-other"></span>
-                        <span class="menu-piece"></span>
-                        <span class="every-other"></span>
-                        <span class="menu-piece"></span>
-                        <span class="every-other"></span>
-                        <span class="menu-piece"></span>
-                        <span class="every-other"></span>
-                        <span class="menu-piece"></span>
-                        <span class="every-other"></span>
-                        <span class="menu-piece"></span>
+                <div class="snake-menu-size">
+                    <div class="start-background">
+                        <div class="wrapper-top">
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                        </div>
                     </div>
-                </div>
-                <div class="start-background">
-                    <div class="wrapper-bottom">
-                        <span class="every-other"></span>
-                        <span class="menu-piece"></span>
-                        <span class="every-other"></span>
-                        <span class="menu-piece"></span>
-                        <span class="every-other"></span>
-                        <span class="menu-piece"></span>
-                        <span class="every-other"></span>
-                        <span class="menu-piece"></span>
-                        <span class="every-other"></span>
-                        <span class="menu-piece"></span>
-                        <span class="every-other"></span>
-                        <span class="menu-piece"></span>
-                        <span class="every-other"></span>
+                    <div class="start-background">
+                        <div class="wrapper-bottom">
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                        </div>
                     </div>
-                </div>
-                <div class="start-background">
-                    <div class="wrapper-top">
-                        <span class="menu-piece"></span>
-                        <span class="every-other"></span>
-                        <span class="menu-piece"></span>
-                        <span class="every-other"></span>
-                        <span class="menu-piece"></span>
-                        <span class="every-other"></span>
-                        <span class="menu-piece"></span>
-                        <span class="every-other"></span>
-                        <span class="menu-piece"></span>
-                        <span class="every-other"></span>
-                        <span class="menu-piece"></span>
-                        <span class="every-other"></span>
-                        <span class="menu-piece"></span>
+                    <div class="start-background">
+                        <div class="wrapper-top">
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="score-box">
+            <div class="score-box margin-top">
                 <div onclick="settingsMenu()" class="settings-wrap">
                     <div class="gear-wrap">
                         <span class="gear-icon">&#x2699;</span>
@@ -110,32 +112,33 @@
             </div>
         </div>
         <div id="settingsMenu" class="snake-settings-container hide">
-            <h2 class="title-score">Settings</h2>
+            <h2 class="title-score settings-title">Settings</h2>
             <div class="snake-settings-wrap">
                 <p class="title-score small-txt">Snake Color</p>
-                <label class="snake-color">
-                    <input checked value="blue" id="blueSnake" name="snakeColor" class="check-box" type="radio">
-                    <span class="snake"></span>
-                </label>
-                <label class="snake-color">
-                    <input value="purple" id="purpleSnake" name="snakeColor" class="check-box" type="radio">
-                    <span class="snake purple"></span>
-                </label>
-                <label class="snake-color">
-                    <input value="green" id="greenSnake" name="snakeColor" class="check-box" type="radio">
-                    <span class="snake green"></span>
-                </label>
-                <label class="snake-color">
-                    <input value="yellow" id="yellowSnake" name="snakeColor" class="check-box" type="radio">
-                    <span class="snake yellow"></span>
-                </label>
-                <label class="snake-color">
-                    <input value="red" id="redSnake" name="snakeColor" class="check-box" type="radio">
-                    <span class="snake red"></span>
-                </label>
+                <div class="snake-color-wrap">
+                    <label class="snake-color">
+                        <input checked value="blue" id="blueSnake" name="snakeColor" class="check-box" type="radio">
+                        <span class="snake"></span>
+                    </label>
+                    <label class="snake-color">
+                        <input value="purple" id="purpleSnake" name="snakeColor" class="check-box" type="radio">
+                        <span class="snake purple"></span>
+                    </label>
+                    <label class="snake-color">
+                        <input value="green" id="greenSnake" name="snakeColor" class="check-box" type="radio">
+                        <span class="snake green"></span>
+                    </label>
+                    <label class="snake-color">
+                        <input value="yellow" id="yellowSnake" name="snakeColor" class="check-box" type="radio">
+                        <span class="snake yellow"></span>
+                    </label>
+                    <label class="snake-color">
+                        <input value="red" id="redSnake" name="snakeColor" class="check-box" type="radio">
+                        <span class="snake red"></span>
+                    </label>
+                </div>
                 <div class="score-box margin-top">       
                     <div class="high-score"><button onclick="hideSettings(), snakeColor()" class="hs-btn"> Go Back </button></div>
-                    <div class="start-game"><button onclick="settingsStart()" class="play-btn"> Play Game </button></div>
                 </div>
             </div>
         </div>
@@ -151,18 +154,18 @@
                 <div class="high-score"><div onclick="scoreList()" class="hs-btn"> High Scores </div></div>
             </div>
         </div>
-        <div id="scoreBoard" class="high-score-container hide">
-            <div id="high-score-list" class="inside-high-score">
+        <div id="scoreBoard" class="high-score-container hide">       
+            <div class="inside-high-score">
                 <div class="current-score">
-                    <p class="title-score">High Scores</p>
+                    <p class="title-score settings-title">High Scores</p>
                 </div>
-                <!-- <span id="score" class="latestScore"> 0 </span> -->
                 <div class="title-score-wrap">
                     <div class="placement-title">Position</div>
                     <div class="player-title">Player</div>
                     <div class="score-title">Score</div>
                 </div>
             </div>
+            <div id="high-score-list" class="high-score-wrapper"></div>
             <div class="score-box">       
                 <div class="high-score"><button onclick="retryGame()" class="hs-btn"> Main Menu </button></div>
                 <div class="start-game"><button onclick="retryGame()" class="play-btn"> Play Game </button></div>

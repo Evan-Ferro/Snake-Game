@@ -64,6 +64,7 @@ function frame(){
     if(paused === true || endGameCalled === true){
         return;
     }
+
     let angle;
     newSnake();
     
@@ -86,7 +87,6 @@ function frame(){
     }
     previous = direction;
 
-    
     draw(Snake, snakeX, snakeY, angle);
     snakeBoundaries();
     for(let i =0; i < snakeBody.length; i++){
@@ -185,6 +185,9 @@ function startGame(){
     appleWrapper.append(Apple);
     Apple.classList.add('appleScale');
     Apple.innerHTML = '&#127822;'
+
+    const html = document.getElementById('html');
+    html.classList.add('mainBackground');
     
     appleWrapper.classList.add('appleVisible');
     draw(appleWrapper, appleX, appleY);
@@ -266,6 +269,9 @@ function endGame(){
     gameOver.classList.add('show');
     gameOver.classList.remove('hide');
 
+    const html = document.getElementById('html');
+    html.classList.remove('mainBackground');
+
     const Grid = document.getElementById('snakeGrid');
     Grid.classList.add('hide');
 }
@@ -319,7 +325,7 @@ function scoreList(){
     let allScores = JSON.parse(savedScores);
     allScores.push(result);
     allScores.sort((a, b) => b.score - a.score);
-    allScores = allScores.slice(0, 5);
+    allScores = allScores.slice(0, 7);
     localStorage.setItem('highscore', JSON.stringify(allScores));
 
     for(let i = 0; i < allScores.length; i++){
@@ -343,7 +349,7 @@ function scoreList(){
 function snakeColor(){
     for(let i = 0; i < snakeBody.length; i++){
         if(document.getElementById('blueSnake').checked){
-            snakeBody[i].element.style.backgroundColor="blue";  
+            snakeBody[i].element.style.backgroundColor="0061ff";  
         }
         if(document.getElementById('greenSnake').checked){
             snakeBody[i].element.style.backgroundColor="darkslategray";
@@ -355,7 +361,7 @@ function snakeColor(){
             snakeBody[i].element.style.backgroundColor="red";
         }
         if(document.getElementById('purpleSnake').checked){
-            snakeBody[i].element.style.backgroundColor="purple";
+            snakeBody[i].element.style.backgroundColor="#921192";
         }
     }
     const menusnake = document.getElementById('menuSnake');
@@ -369,16 +375,16 @@ function snakeColor(){
     const menusnake8 = document.getElementById('menuSnake8');
     
     if(document.getElementById('blueSnake').checked){
-        Snake.style.backgroundColor = "blue";
-        menusnake.style.backgroundColor="blue";
-        menusnake1.style.backgroundColor="blue";
-        menusnake2.style.backgroundColor="blue";
-        menusnake3.style.backgroundColor="blue";
-        menusnake4.style.backgroundColor="blue";
-        menusnake5.style.backgroundColor="blue";
-        menusnake6.style.backgroundColor="blue";
-        menusnake7.style.backgroundColor="blue";
-        menusnake8.style.backgroundColor="blue";
+        Snake.style.backgroundColor = "#0061ff";
+        menusnake.style.backgroundColor="#0061ff";
+        menusnake1.style.backgroundColor="#0061ff";
+        menusnake2.style.backgroundColor="#0061ff";
+        menusnake3.style.backgroundColor="#0061ff";
+        menusnake4.style.backgroundColor="#0061ff";
+        menusnake5.style.backgroundColor="#0061ff";
+        menusnake6.style.backgroundColor="#0061ff";
+        menusnake7.style.backgroundColor="#0061ff";
+        menusnake8.style.backgroundColor="#0061ff";
     }
     if(document.getElementById('greenSnake').checked){
         Snake.style.backgroundColor = "darkslategray";
@@ -417,16 +423,16 @@ function snakeColor(){
         menusnake8.style.backgroundColor="red";
     }
     if(document.getElementById('purpleSnake').checked){
-        Snake.style.backgroundColor = "purple";
-        menusnake.style.backgroundColor="purple";
-        menusnake1.style.backgroundColor="purple";
-        menusnake2.style.backgroundColor="purple";
-        menusnake3.style.backgroundColor="purple";
-        menusnake4.style.backgroundColor="purple";
-        menusnake5.style.backgroundColor="purple";
-        menusnake6.style.backgroundColor="purple";
-        menusnake7.style.backgroundColor="purple";
-        menusnake8.style.backgroundColor="purple"; 
+        Snake.style.backgroundColor = "#921192";
+        menusnake.style.backgroundColor="#921192";
+        menusnake1.style.backgroundColor="#921192";
+        menusnake2.style.backgroundColor="#921192";
+        menusnake3.style.backgroundColor="#921192";
+        menusnake4.style.backgroundColor="#921192";
+        menusnake5.style.backgroundColor="#921192";
+        menusnake6.style.backgroundColor="#921192";
+        menusnake7.style.backgroundColor="#921192";
+        menusnake8.style.backgroundColor="#921192"; 
     }
 }
 
@@ -443,7 +449,7 @@ function hideSettings(){
     const startMenu = document.getElementById('startMenu');
 
     startMenu.classList.remove('hide');
-    startMenu.classList.add('show');
+    startMenu.classList.add('flex');
     settingsMenu.classList.remove('show');
     settingsMenu.classList.add('hide');
 }
@@ -451,7 +457,7 @@ function hideSettings(){
 function settingsStart(){
     startGame();
     const settingsMenu = document.getElementById('settingsMenu');
-    settingsMenu.classList.remove('show');
+    settingsMenu.classList.remove('flex');
     settingsMenu.classList.add('hide');
 }
     
