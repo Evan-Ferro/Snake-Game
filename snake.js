@@ -56,14 +56,10 @@ function createInterval(){
     }); 
 }
 
-function updateDirection(){
-    previous = current;
-}
-
 function frame(){
-   
     const scoreBox = document.getElementById('score');
     const endScore = document.getElementById('endScore');
+    const snakeHead = document.getElementById('snakeHead');
 
     if(paused === true || endGameCalled === true){
         return;
@@ -198,6 +194,7 @@ function startGame(){
     interval = setInterval(frame, t);
     setTimeout(() => {
         Snake.classList.add('snakeVisible');
+        Snake.classList.add('z-index');
         gameBoard.append(Snake);
     }, 200);
 
@@ -349,7 +346,7 @@ function snakeColor(){
             snakeBody[i].element.style.backgroundColor="blue";  
         }
         if(document.getElementById('greenSnake').checked){
-            snakeBody[i].element.style.backgroundColor="green";
+            snakeBody[i].element.style.backgroundColor="darkslategray";
         }
         if(document.getElementById('yellowSnake').checked){
             snakeBody[i].element.style.backgroundColor="goldenrod";
