@@ -1063,7 +1063,7 @@ body{
     padding: 2rem;
     justify-content: space-around;
     align-items: center;
-    background-color: #466c4a6b;
+    background-color: #45814b6b;
     padding: 1.5rem;
 }
 
@@ -1198,7 +1198,7 @@ input[type="radio"]::before {
     font-size: 2rem;
     margin-top: 0;
     margin-bottom: 0;
-    background-color: #466c4a6b;
+    background-color: #45814b6b;
 }
 
 /* Start Menu snake animation*/
