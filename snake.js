@@ -175,7 +175,7 @@ function startGame(){
     topScore();
     showGrid();
     hideMenu();
-    snakeColor();
+    
 
     const gameBoard = document.getElementById('gameBoard');
     Snake.innerText = 'o o';
@@ -188,7 +188,9 @@ function startGame(){
     gameBoard.append(appleWrapper);
     appleWrapper.append(Apple);
     Apple.classList.add('appleScale');
+    Apple.setAttribute("id", "scoreIcon");
     Apple.innerHTML = '&#127822;'
+    snakeColor();
 
     const html = document.getElementById('html');
     html.classList.add('mainBackground');
@@ -436,6 +438,29 @@ function snakeColor(){
         menusnake6.style.backgroundColor="#921192";
         menusnake7.style.backgroundColor="#921192";
         menusnake8.style.backgroundColor="#921192"; 
+    }
+
+    const scoreApple = document.getElementById('scoreIcon');
+    const apple = '\u{1F34E}';
+    const peach = '\u{1F351}';
+    const cherry = '\u{1F352}';
+    const grape = '\u{1F347}';
+    const watermelon = '\u{1F349}';
+
+    if(document.getElementById('apple-icon').checked){
+        scoreApple.innerHTML=(apple);  
+    }
+    if(document.getElementById('peach-icon').checked){
+        scoreApple.innerHTML=(peach);
+    }
+    if(document.getElementById('cherry-icon').checked){
+        scoreApple.innerHTML=(cherry);
+    }
+    if(document.getElementById('grape-icon').checked){
+        scoreApple.innerHTML=(grape);
+    }
+    if(document.getElementById('watermelon-icon').checked){
+        scoreApple.innerHTML=(watermelon);
     }
 }
 
