@@ -1,5 +1,6 @@
 let score = 0;
 const Snake = document.createElement('span');
+const SnakeEyes = document.createElement('p');
 const Apple = document.createElement('span');
 const gameBoard = document.getElementById('gameBoard');
 const pauseMenu = document.getElementById('pauseMenu');
@@ -56,12 +57,7 @@ function createInterval(){
     }); 
 }
 
-function updateDirection(){
-    previous = current;
-}
-
 function frame(){
-   
     const scoreBox = document.getElementById('score');
     const endScore = document.getElementById('endScore');
 
@@ -75,19 +71,31 @@ function frame(){
 
     if(direction === 'up'){
         snakeY -= 1;
-        angle = 0;
+        SnakeEyes.classList.remove('snakeEyes-left');
+        SnakeEyes.classList.remove('snakeEyes-right');
+        SnakeEyes.classList.remove('snakeEyes-down');
+        SnakeEyes.classList.add('snakeEyes-up');
     }
     if(direction === 'left'){
         snakeX -= 1;
-        angle = 270; 
+        SnakeEyes.classList.remove('snakeEyes-up');
+        SnakeEyes.classList.remove('snakeEyes-right');
+        SnakeEyes.classList.remove('snakeEyes-down');
+        SnakeEyes.classList.add('snakeEyes-left');
     }
     if(direction === 'down'){
         snakeY += 1;
-        angle = 180; 
+        SnakeEyes.classList.remove('snakeEyes-left');
+        SnakeEyes.classList.remove('snakeEyes-right');
+        SnakeEyes.classList.remove('snakeEyes-up');
+        SnakeEyes.classList.add('snakeEyes-down'); 
     }
     if(direction === 'right'){
         snakeX += 1;
-        angle = 90;
+        SnakeEyes.classList.remove('snakeEyes-left');
+        SnakeEyes.classList.remove('snakeEyes-up');
+        SnakeEyes.classList.remove('snakeEyes-down');
+        SnakeEyes.classList.add('snakeEyes-right');
     }
     previous = direction;
 
@@ -178,10 +186,12 @@ function startGame(){
     
 
     const gameBoard = document.getElementById('gameBoard');
-    Snake.innerText = 'o o';
-    Snake.style.color = 'white';
-    Snake.style.textAlign = 'center';
-    Snake.style.fontFamily = "cursive";
+    SnakeEyes.classList.add('snakeEyes-left');
+    SnakeEyes.innerText = 'o o';
+    SnakeEyes.style.color = 'white';
+    SnakeEyes.style.textAlign = 'center';
+    SnakeEyes.style.fontFamily = "cursive";
+    Snake.append(SnakeEyes);
     
     
     const appleWrapper = document.getElementById('appleWrapper');
@@ -203,6 +213,7 @@ function startGame(){
     interval = setInterval(frame, t);
     setTimeout(() => {
         Snake.classList.add('snakeVisible');
+        Snake.classList.add('z-index');
         gameBoard.append(Snake);
     }, 200);
 
@@ -224,8 +235,8 @@ function checkApple(x, y){
     return false;
 }
 
-function draw(element, x, y, angle=0){
-    element.style.transform = `translate(${x * 28}px, ${y * 28}px) rotate(${angle}deg)`;
+function draw(element, x, y){
+    element.style.transform = `translate(${x * 28}px, ${y * 28}px)`;
 }
 
 function getRandomInt(min, max) {
@@ -357,7 +368,7 @@ function snakeColor(){
             snakeBody[i].element.style.backgroundColor="0061ff";  
         }
         if(document.getElementById('greenSnake').checked){
-            snakeBody[i].element.style.backgroundColor="green";
+            snakeBody[i].element.style.backgroundColor="darkslategray";
         }
         if(document.getElementById('yellowSnake').checked){
             snakeBody[i].element.style.backgroundColor="goldenrod";

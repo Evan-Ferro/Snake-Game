@@ -617,6 +617,7 @@ body{
     padding-bottom: 1rem;
     background-color: #4d5d4f;
     margin-top: 10%;
+    min-width: 310px;
 }
 
 .end-game{
@@ -659,6 +660,34 @@ body{
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
     transition: all 0.2s linear;
+}
+
+.snakeHead{
+    display: block;
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 20%;
+    background-color: blue;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+.snakeHeadUp{
+    transform: rotate(0deg);
+}
+
+.snakeHeadDown{
+    transform: rotate(180deg);
+}
+
+.snakeHeadLeft{
+    transform: rotate(270deg);
+}
+
+.snakeHeadRight{
+    transform: rotate(90deg);
 }
 
 .snakeBody{
@@ -864,19 +893,23 @@ body{
 .player-position{
     color: white;
     font-family: cursive;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
 }
 
 .player-name{
     color: white;
     font-family: cursive;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
 }
 
 .user-name{
     color: black;
     font-family: cursive;
+<<<<<<< HEAD
+    font-size: 1.4rem;
+=======
     font-size: 1.7rem;
+>>>>>>> 90bbb719518a8c06d91b46fd275ffd888d2132aa
     margin-top: 0.4rem;
 }
 
@@ -1448,6 +1481,30 @@ input[type="radio"]::before {
     background-color: #4d5d4f;
 }
 
+/* Snake eyes movement*/
+.snakeEyes-up{
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+    transition-duration: 0.1s;
+}
+
+.snakeEyes-down{
+    margin-top: 10px;
+    transform: rotate(0deg);
+}
+
+.snakeEyes-left{
+    margin-top: 5px;
+    margin-right: 6px;
+    transform: rotate(90deg);
+}
+
+.snakeEyes-right{
+    margin-top: 0.27rem;
+    margin-left: 0.4rem;
+    transform: rotate(270deg);
+}
+
 /* The Apple growing & shrinking animation*/
 .appleScale{
     animation: appleGrow 1s linear infinite alternate;
@@ -1468,4 +1525,8 @@ input[type="radio"]::before {
 
 .margin-bot-0{
     margin-bottom: 0;
+}
+
+.z-index{
+    z-index: 1;
 }
