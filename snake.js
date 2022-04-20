@@ -65,11 +65,9 @@ function frame(){
     if(paused === true || endGameCalled === true){
         return;
     }
-
     let angle;
     newSnake();
     
-
     if(direction === 'up'){
         snakeY -= 1;
         SnakeEyes.classList.remove('snakeEyes-left');
@@ -118,9 +116,9 @@ function frame(){
             t = Math.floor(t * 0.95);
             clearInterval(interval);
             interval = setInterval(frame, t);
-            Snake.style.transitionDuration = `${t - 10}ms`;
+            Snake.style.transitionDuration = `${t - 17}ms`;
             for(let i = 0; i < snakeBody.length; i++){
-                snakeBody[i].element.style.transitionDuration = `${t - 10}ms`;
+                snakeBody[i].element.style.transitionDuration = `${t - 17}ms`;
             }
             console.log(`${t}ms`);
         }
@@ -261,7 +259,7 @@ function buildSnake(){
     snakeBody.push({element:snake2, x:babySnakeX, y:babySnakeY});
 
     snake2.classList.add('snakeVisible'); 
-    snake2.style.transitionDuration = `${t - 10}ms`;
+    snake2.style.transitionDuration = `${t - 17}ms`;
     gameBoard.append(snake2);
     draw(snake2, babySnakeX, babySnakeY);
 }
