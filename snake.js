@@ -117,9 +117,9 @@ function frame(){
             t = Math.floor(t * 0.95);
             clearInterval(interval);
             interval = setInterval(frame, t);
-            Snake.style.transitionDuration = `${t}ms`;
+            Snake.style.transitionDuration = `${t - 5}ms`;
             for(let i = 0; i < snakeBody.length; i++){
-                snakeBody[i].element.style.transitionDuration = `${t}ms`;
+                snakeBody[i].element.style.transitionDuration = `${t - 5}ms`;
             }
             console.log(`${t}ms`);
         }
@@ -258,7 +258,7 @@ function buildSnake(){
     snakeBody.push({element:snake2, x:babySnakeX, y:babySnakeY});
 
     snake2.classList.add('snakeVisible'); 
-    snake2.style.transitionDuration = `${t}ms`;
+    snake2.style.transitionDuration = `${t - 5}ms`;
     gameBoard.append(snake2);
     draw(snake2, babySnakeX, babySnakeY);
 }
