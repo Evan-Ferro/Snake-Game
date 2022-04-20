@@ -341,7 +341,7 @@ function scoreList(){
     let allScores = JSON.parse(savedScores);
     allScores.push(result);
     allScores.sort((a, b) => b.score - a.score);
-    allScores = allScores.slice(0, 7);
+    allScores = allScores.slice(0, 20);
     localStorage.setItem('highscore', JSON.stringify(allScores));
 
     for(let i = 0; i < allScores.length; i++){
