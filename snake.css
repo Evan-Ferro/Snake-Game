@@ -22,6 +22,7 @@ line-height: 1.15; /* 1 */
 
 body {
 margin: 0;
+overflow: overlay;
 }
 
 /**
@@ -481,7 +482,7 @@ body{
 }
 
 .hs-btn{
-    color: orange;
+    color: #7d5203;
     background-color: white;
     border: 3px solid black;
     padding: 0.8rem;
@@ -516,6 +517,29 @@ body{
     margin-top: 0.7rem;
 }
 
+.grape-icon{
+    height: 2.7rem;
+    font-size: 2.5rem;
+    margin-top: 0.7rem;
+}
+
+.watermelon-icon{
+    height: 2.7rem;
+    font-size: 2.5rem;
+    margin-top: 0.7rem;
+}
+
+.peach-icon{
+    height: 2.7rem;
+    font-size: 2.5rem;
+    margin-top: 0.7rem;
+}
+
+.cherry-icon{
+    height: 2.7rem;
+    font-size: 2.5rem;
+    margin-top: 0.7rem;
+}
 .show{
     display: block !important;
 }
@@ -559,20 +583,16 @@ body{
     flex-wrap: wrap;
     height: 28px;
     width: 28px;
-}
-
-.game-grid > .grid-piece:nth-child(odd){
-    background-color: darkolivegreen;
-}
-.game-grid > .grid-piece:nth-child(even){
-    background-color: beige;
-}
-
-.game-grid-color > .grid-piece:nth-child(even){
     background-color: darkolivegreen;
 }
 
-.game-grid-color > .grid-piece:nth-child(odd){
+.grid-piece-other{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 28px;
+    width: 28px;
     background-color: beige;
 }
 
@@ -634,9 +654,7 @@ body{
     border-radius: 20%;
     background-color: #0061ff;
     left: 0px;
-    -webkit-transition: all 0.2s linear;
-    -moz-transition: all 0.2s linear;
-    transition: all 0.2s linear;
+    transition: all 0.195s linear;
 }
 
 .snakeHead{
@@ -647,9 +665,7 @@ body{
     border-radius: 20%;
     background-color: blue;
     left: 0px;
-    -webkit-transition: all 0.2s linear;
-    -moz-transition: all 0.2s linear;
-    transition: all 0.2s linear;
+    transition: all 0.195s linear;
 }
 
 .snakeHeadUp{
@@ -675,9 +691,7 @@ body{
     width: 28px;
     background-color: #0061ff;
     left: 0px;
-    -webkit-transition: all 0.2s linear;
-    -moz-transition: all 0.2s linear;
-    transition: all 0.2s linear;
+    transition: all 0.195s linear;
 }
 
 .appleVisible{
@@ -1044,7 +1058,7 @@ body{
     padding: 2rem;
     justify-content: space-around;
     align-items: center;
-    background-color: #466c4a6b;
+    background-color: #45814b6b;
     padding: 1.5rem;
 }
 
@@ -1052,12 +1066,29 @@ body{
     width: 80%;
     border-radius: 6px;
     border: 4px solid black;
+    overflow: scroll;
+    height: 24rem;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(90, 90, 90);
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .snake{
     position: relative;
-    height: 28px;
-    width: 28px;
+    height: 42px;
+    width: 42px;
     border-radius: 20%;
     background-color: #0061ff;
     text-align: center;
@@ -1159,9 +1190,10 @@ input[type="radio"]::before {
 }
 
 .small-txt{
-    font-size: 1.7rem;
+    font-size: 2rem;
     margin-top: 0;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0;
+    background-color: #45814b6b;
 }
 
 /* Start Menu snake animation*/

@@ -17,6 +17,7 @@ let previous;
 let paused = false;
 let t = 200;
 let endGameCalled = false;
+let gameStarted = false;
 
 
 
@@ -183,7 +184,7 @@ function startGame(){
     topScore();
     showGrid();
     hideMenu();
-    snakeColor();
+    gameStarted = true;
 
     const gameBoard = document.getElementById('gameBoard');
     SnakeEyes.classList.add('snakeEyes-left');
@@ -198,7 +199,9 @@ function startGame(){
     gameBoard.append(appleWrapper);
     appleWrapper.append(Apple);
     Apple.classList.add('appleScale');
+    Apple.setAttribute("id", "scoreIcon");
     Apple.innerHTML = '&#127822;'
+    snakeColor();
 
     const html = document.getElementById('html');
     html.classList.add('mainBackground');
@@ -339,7 +342,7 @@ function scoreList(){
     let allScores = JSON.parse(savedScores);
     allScores.push(result);
     allScores.sort((a, b) => b.score - a.score);
-    allScores = allScores.slice(0, 7);
+    allScores = allScores.slice(0, 20);
     localStorage.setItem('highscore', JSON.stringify(allScores));
 
     for(let i = 0; i < allScores.length; i++){
@@ -448,6 +451,82 @@ function snakeColor(){
         menusnake7.style.backgroundColor="#921192";
         menusnake8.style.backgroundColor="#921192"; 
     }
+
+    const scoreApple = document.getElementById('scoreIcon');
+    const topIcon = document.getElementById('topIcon');
+    const apple = '\u{1F34E}';
+    const peach = '\u{1F351}';
+    const cherry = '\u{1F352}';
+    const grape = '\u{1F347}';
+    const watermelon = '\u{1F349}';
+
+    const purpleBackground = '#2f6a6b';
+    const redBackground = 'rgb(170 116 68)';
+    const yellowBackground = 'rgb(47 79 130)';
+    const greenBackground = 'rgb(223 177 109)';
+    const blueBackground = 'darkolivegreen';
+    const everyOther = document.getElementsByClassName('every-other');
+    const gridPiece = document.getElementsByClassName('grid-piece');
+    
+    for(let i=0; i < gridPiece.length; i++){
+        if(document.getElementById('blueSnake').checked){
+            gridPiece[i].style.backgroundColor=(blueBackground);  
+        }
+        if(document.getElementById('greenSnake').checked){
+            gridPiece[i].style.backgroundColor=(greenBackground);
+        }
+        if(document.getElementById('yellowSnake').checked){
+            gridPiece[i].style.backgroundColor=(yellowBackground);
+        }
+        if(document.getElementById('redSnake').checked){
+            gridPiece[i].style.backgroundColor=(redBackground);
+        }
+        if(document.getElementById('purpleSnake').checked){
+            gridPiece[i].style.backgroundColor=(purpleBackground);
+        }
+    }
+
+    for(let i=0; i < everyOther.length; i++){
+        if(document.getElementById('blueSnake').checked){
+            everyOther[i].style.backgroundColor=(blueBackground);  
+        }
+        if(document.getElementById('greenSnake').checked){
+            everyOther[i].style.backgroundColor=(greenBackground);
+        }
+        if(document.getElementById('yellowSnake').checked){
+            everyOther[i].style.backgroundColor=(yellowBackground);
+        }
+        if(document.getElementById('redSnake').checked){
+            everyOther[i].style.backgroundColor=(redBackground);
+        }
+        if(document.getElementById('purpleSnake').checked){
+            everyOther[i].style.backgroundColor=(purpleBackground);
+        }
+    }
+
+    if(gameStarted === true){
+        if(document.getElementById('apple-icon').checked){
+            scoreApple.innerHTML=(apple);  
+            topIcon.innerHTML=(apple);
+        }
+        if(document.getElementById('peach-icon').checked){
+            scoreApple.innerHTML=(peach);
+            topIcon.innerHTML=(peach);
+        }
+        if(document.getElementById('cherry-icon').checked){
+            scoreApple.innerHTML=(cherry);
+            topIcon.innerHTML=(cherry);
+        }
+        if(document.getElementById('grape-icon').checked){
+            scoreApple.innerHTML=(grape);
+            topIcon.innerHTML=(grape);
+        }
+        if(document.getElementById('watermelon-icon').checked){
+            scoreApple.innerHTML=(watermelon);
+            topIcon.innerHTML=(watermelon);
+        }
+    }
+    
 }
 
 function settingsMenu(){
