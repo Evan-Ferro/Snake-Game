@@ -17,6 +17,7 @@ let previous;
 let paused = false;
 let t = 200;
 let endGameCalled = false;
+let gameStarted = false;
 
 
 
@@ -183,7 +184,7 @@ function startGame(){
     topScore();
     showGrid();
     hideMenu();
-    
+    gameStarted = true;
 
     const gameBoard = document.getElementById('gameBoard');
     SnakeEyes.classList.add('snakeEyes-left');
@@ -452,27 +453,76 @@ function snakeColor(){
     }
 
     const scoreApple = document.getElementById('scoreIcon');
+    const topIcon = document.getElementById('topIcon');
     const apple = '\u{1F34E}';
     const peach = '\u{1F351}';
     const cherry = '\u{1F352}';
     const grape = '\u{1F347}';
     const watermelon = '\u{1F349}';
 
-    if(document.getElementById('apple-icon').checked){
-        scoreApple.innerHTML=(apple);  
+    const purpleBackground = '#2f6a6b';
+    const everyOther = document.getElementsByClassName('every-other');
+    const gridPiece = document.getElementsByClassName('grid-piece');
+    
+    for(let i=0; i < gridPiece.length; i++){
+        if(document.getElementById('blueSnake').checked){
+            gridPiece[i].style.backgroundColor="darkolivegreen";  
+        }
+        if(document.getElementById('greenSnake').checked){
+            gridPiece[i].style.backgroundColor="rgb(223 177 109)";
+        }
+        if(document.getElementById('yellowSnake').checked){
+            gridPiece[i].style.backgroundColor="rgb(47 79 130)";
+        }
+        if(document.getElementById('redSnake').checked){
+            gridPiece[i].style.backgroundColor="rgb(170 116 68)";
+        }
+        if(document.getElementById('purpleSnake').checked){
+            gridPiece[i].style.backgroundColor=(purpleBackground);
+        }
     }
-    if(document.getElementById('peach-icon').checked){
-        scoreApple.innerHTML=(peach);
+
+    for(let i=0; i < everyOther.length; i++){
+        if(document.getElementById('blueSnake').checked){
+            everyOther[i].style.backgroundColor="darkolivegreen";  
+        }
+        if(document.getElementById('greenSnake').checked){
+            everyOther[i].style.backgroundColor="rgb(223 177 109)";
+        }
+        if(document.getElementById('yellowSnake').checked){
+            everyOther[i].style.backgroundColor="rgb(47 79 130)";
+        }
+        if(document.getElementById('redSnake').checked){
+            everyOther[i].style.backgroundColor="rgb(170 116 68)";
+        }
+        if(document.getElementById('purpleSnake').checked){
+            everyOther[i].style.backgroundColor=(purpleBackground);
+        }
     }
-    if(document.getElementById('cherry-icon').checked){
-        scoreApple.innerHTML=(cherry);
+
+    if(gameStarted === true){
+        if(document.getElementById('apple-icon').checked){
+            scoreApple.innerHTML=(apple);  
+            topIcon.innerHTML=(apple);
+        }
+        if(document.getElementById('peach-icon').checked){
+            scoreApple.innerHTML=(peach);
+            topIcon.innerHTML=(peach);
+        }
+        if(document.getElementById('cherry-icon').checked){
+            scoreApple.innerHTML=(cherry);
+            topIcon.innerHTML=(cherry);
+        }
+        if(document.getElementById('grape-icon').checked){
+            scoreApple.innerHTML=(grape);
+            topIcon.innerHTML=(grape);
+        }
+        if(document.getElementById('watermelon-icon').checked){
+            scoreApple.innerHTML=(watermelon);
+            topIcon.innerHTML=(watermelon);
+        }
     }
-    if(document.getElementById('grape-icon').checked){
-        scoreApple.innerHTML=(grape);
-    }
-    if(document.getElementById('watermelon-icon').checked){
-        scoreApple.innerHTML=(watermelon);
-    }
+    
 }
 
 function settingsMenu(){

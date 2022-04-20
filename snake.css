@@ -583,20 +583,16 @@ body{
     flex-wrap: wrap;
     height: 28px;
     width: 28px;
-}
-
-.game-grid > .grid-piece:nth-child(odd){
-    background-color: darkolivegreen;
-}
-.game-grid > .grid-piece:nth-child(even){
-    background-color: beige;
-}
-
-.game-grid-color > .grid-piece:nth-child(even){
     background-color: darkolivegreen;
 }
 
-.game-grid-color > .grid-piece:nth-child(odd){
+.grid-piece-other{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 28px;
+    width: 28px;
     background-color: beige;
 }
 
