@@ -657,6 +657,8 @@ body{
     width: 28px;
     border-radius: 20%;
     background-color: #0061ff;
+    transition-duration: 200ms;
+    transform: translate(0px, 0px);
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
     transition: all 0.2s linear;
@@ -1094,8 +1096,8 @@ body{
 
 .snake{
     position: relative;
-    height: 28px;
-    width: 28px;
+    height: 42px;
+    width: 42px;
     border-radius: 20%;
     background-color: #0061ff;
     text-align: center;
@@ -1197,7 +1199,7 @@ input[type="radio"]::before {
 }
 
 .small-txt{
-    font-size: 1.7rem;
+    font-size: 2rem;
     margin-top: 0;
     margin-bottom: 0;
     background-color: #466c4a6b;
