@@ -654,7 +654,7 @@ body{
     border-radius: 20%;
     background-color: #0061ff;
     left: 0px;
-    transition: all 0.195s linear;
+    transition: all 0.190s linear;
 }
 
 .snakeHead{
@@ -665,7 +665,7 @@ body{
     border-radius: 20%;
     background-color: blue;
     left: 0px;
-    transition: all 0.195s linear;
+    transition: all 0.190s linear;
 }
 
 .snakeHeadUp{
@@ -691,7 +691,7 @@ body{
     width: 28px;
     background-color: #0061ff;
     left: 0px;
-    transition: all 0.195s linear;
+    transition: all 0.190s linear;
 }
 
 .appleVisible{
@@ -1479,19 +1479,21 @@ input[type="radio"]::before {
 
 .snakeEyes-down{
     margin-top: 10px;
-    transform: rotate(0deg);
+    transition-duration: 0.1s;
 }
 
 .snakeEyes-left{
     margin-top: 5px;
     margin-right: 6px;
     transform: rotate(90deg);
+    transition-duration: 0.1s;
 }
 
 .snakeEyes-right{
-    margin-top: 0.27rem;
-    margin-left: 0.4rem;
-    transform: rotate(270deg);
+    margin-top: 5px;
+    margin-right: -14px;
+    transform: rotate(90deg);
+    transition-duration: 0.1s;
 }
 
 /* The Apple growing & shrinking animation*/
