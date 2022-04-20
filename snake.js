@@ -461,21 +461,25 @@ function snakeColor(){
     const watermelon = '\u{1F349}';
 
     const purpleBackground = '#2f6a6b';
+    const redBackground = 'rgb(170 116 68)';
+    const yellowBackground = 'rgb(47 79 130)';
+    const greenBackground = 'rgb(223 177 109)';
+    const blueBackground = 'darkolivegreen';
     const everyOther = document.getElementsByClassName('every-other');
     const gridPiece = document.getElementsByClassName('grid-piece');
     
     for(let i=0; i < gridPiece.length; i++){
         if(document.getElementById('blueSnake').checked){
-            gridPiece[i].style.backgroundColor="darkolivegreen";  
+            gridPiece[i].style.backgroundColor=(blueBackground);  
         }
         if(document.getElementById('greenSnake').checked){
-            gridPiece[i].style.backgroundColor="rgb(223 177 109)";
+            gridPiece[i].style.backgroundColor=(greenBackground);
         }
         if(document.getElementById('yellowSnake').checked){
-            gridPiece[i].style.backgroundColor="rgb(47 79 130)";
+            gridPiece[i].style.backgroundColor=(yellowBackground);
         }
         if(document.getElementById('redSnake').checked){
-            gridPiece[i].style.backgroundColor="rgb(170 116 68)";
+            gridPiece[i].style.backgroundColor=(redBackground);
         }
         if(document.getElementById('purpleSnake').checked){
             gridPiece[i].style.backgroundColor=(purpleBackground);
@@ -484,16 +488,16 @@ function snakeColor(){
 
     for(let i=0; i < everyOther.length; i++){
         if(document.getElementById('blueSnake').checked){
-            everyOther[i].style.backgroundColor="darkolivegreen";  
+            everyOther[i].style.backgroundColor=(blueBackground);  
         }
         if(document.getElementById('greenSnake').checked){
-            everyOther[i].style.backgroundColor="rgb(223 177 109)";
+            everyOther[i].style.backgroundColor=(greenBackground);
         }
         if(document.getElementById('yellowSnake').checked){
-            everyOther[i].style.backgroundColor="rgb(47 79 130)";
+            everyOther[i].style.backgroundColor=(yellowBackground);
         }
         if(document.getElementById('redSnake').checked){
-            everyOther[i].style.backgroundColor="rgb(170 116 68)";
+            everyOther[i].style.backgroundColor=(redBackground);
         }
         if(document.getElementById('purpleSnake').checked){
             everyOther[i].style.backgroundColor=(purpleBackground);
