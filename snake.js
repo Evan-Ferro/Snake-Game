@@ -18,6 +18,7 @@ let paused = false;
 let t = 200;
 let endGameCalled = false;
 let gameStarted = false;
+let noHighscore = true;
 
 
 
@@ -356,10 +357,26 @@ function scoreList(){
             <div class="player-score"><span id="mainScore"></span> ${allScores[i].score} </div> 
         </div>`
 
-        scoreContainer.append(highScoreEl);  
+        scoreContainer.append(highScoreEl);
+        noHighscore = false;
+    }
+    if(noHighscore === true){
+        const scoreContainer = document.getElementById('high-score-list');
+        const highScoreEl = document.createElement('div');
+        highScoreEl.innerHTML = `
+        <div style="justify-content:center;" class="player-score-wrap">
+            <div class="player-name"> <span id="player">You have no High scores</span> </div>
+        </div>`
+
+        scoreContainer.append(highScoreEl);
     }
     
 }
+
+window.addEventListener('load', (event) => {
+    console.log(noHighscore);
+    
+});
 
 function snakeColor(){
     for(let i = 0; i < snakeBody.length; i++){

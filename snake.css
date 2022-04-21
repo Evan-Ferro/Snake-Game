@@ -1066,10 +1066,7 @@ body{
     width: 80%;
     border-radius: 6px;
     border: 4px solid black;
-    overflow: scroll;
-    height: 24rem;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+    height: 25rem !important;
 }
 
 ::-webkit-scrollbar {
@@ -1190,9 +1187,11 @@ input[type="radio"]::before {
 }
 
 .small-txt{
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-top: 0;
     margin-bottom: 0;
+    padding-bottom: 2rem;
+    padding-top: 1.5rem;
     background-color: #45814b6b;
 }
 
@@ -1380,7 +1379,18 @@ input[type="radio"]::before {
     margin-right: 9%;
     margin-left: 9%;
     border-radius: 2px;
+    border: none;
+}
+
+.highscore-border{
     border: 1px solid #45814b6b;
+}
+
+.high-score-list{
+    height: 20rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 .start-background-wrap{
