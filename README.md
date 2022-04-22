@@ -1,5 +1,5 @@
 # Snake-Game
-### Welcome to my first personal project with Java Script!
+### Welcome to my first personal project with JavaScript!
 
 #### A little over a week ago, I was given the challenge to try and make my own 'version' of Snake Game.
 #### It has been a challenge, although very crucial to my understanding of code as a whole.
