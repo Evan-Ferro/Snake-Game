@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html id="html" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <script src="/JS/snake.js"></script>
+    <script src="/JS/snakeCave.js"></script>
+</head>
+<body>
+    <section class="main-container">
+        <div id="startMenu" class="container caveSnake-container">
+            <div class="title-wrap">
+                <p class="title-text margin-bot-0">Cave Snake</p>
+            </div>
+            <div class="start-menu-snake-container">
+                <div class="start-menu-snake-wrap">
+                    <div class="animated-snake-wrap animated-snake-head-wrap">
+                        <span id="menuSnake" class="animated-snake-head">
+                            <p class="snake-eyes">o o</p>
+                        </span>
+                    </div>
+                    <div class="animated-snake-wrap">
+                        <span id="menuSnake1" class="animated-snake"></span>
+                    </div>
+                    <div class="animated-snake-wrap second-snake-wrap">
+                        <span id="menuSnake2" class="animated-snake second-snake"></span>
+                    </div>
+                    <div class="animated-snake-wrap third-snake-wrap">
+                        <span id="menuSnake3" class="animated-snake third-snake"></span>
+                    </div>
+                    <div class="animated-snake-wrap fourth-snake-wrap">
+                        <span id="menuSnake4" class="animated-snake fourth-snake"></span>
+                    </div>
+                    <div class="animated-snake-wrap">
+                        <span id="menuSnake5" class="animated-snake"></span>
+                    </div>
+                    <div class="animated-snake-wrap second-snake-wrap">
+                        <span id="menuSnake6" class="animated-snake second-snake"></span>
+                    </div>
+                    <div class="animated-snake-wrap third-snake-wrap">
+                        <span id="menuSnake7" class="animated-snake third-snake"></span>
+                    </div>
+                    <div class="animated-snake-wrap fourth-snake-wrap">
+                        <span id="menuSnake8" class="animated-snake fourth-snake"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="start-background-wrap">
+                <div class="snake-menu-size">
+                    <div class="start-background">
+                        <div class="wrapper-top">
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                        </div>
+                    </div>
+                    <div class="start-background">
+                        <div class="wrapper-bottom">
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                        </div>
+                    </div>
+                    <div class="start-background">
+                        <div class="wrapper-top">
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                            <span class="every-other"></span>
+                            <span class="menu-piece"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="score-box margin-top">
+                <div onclick="settingsMenu()" class="settings-wrap">
+                    <div class="gear-wrap">
+                        <span class="gear-icon">&#x2699;</span>
+                    </div>
+                </div>
+                <div class="start-game"><div onclick="startGame()" class="play-btn"> Play Game </div></div>
+                <div class="high-score"><div onclick="scoreList()" class="hs-btn"> High Scores </div></div>
+            </div>
+        </div>
+        <div id="settingsMenu" class="snake-settings-container hide">
+            <h2 class="title-score settings-title">Settings</h2>
+            <div class="snake-settings-wrap">   
+                <div class="snake-color-wrap high-score-list">
+                    <p class="title-score small-txt">Snake Color</p>
+                    <label class="snake-color">
+                        <input checked value="blue" id="blueSnake" name="snakeColor" class="check-box" type="radio">
+                        <span class="snake"></span>
+                    </label>
+                    <label class="snake-color">
+                        <input value="purple" id="purpleSnake" name="snakeColor" class="check-box" type="radio">
+                        <span class="snake purple"></span>
+                    </label>
+                    <label class="snake-color">
+                        <input value="green" id="greenSnake" name="snakeColor" class="check-box" type="radio">
+                        <span class="snake green"></span>
+                    </label>
+                    <label class="snake-color">
+                        <input value="yellow" id="yellowSnake" name="snakeColor" class="check-box" type="radio">
+                        <span class="snake yellow"></span>
+                    </label>
+                    <label class="snake-color">
+                        <input value="red" id="redSnake" name="snakeColor" class="check-box" type="radio">
+                        <span class="snake red"></span>
+                    </label>
+                    <p class="title-score small-txt">Fruits</p>
+                    <label class="snake-color">
+                        <input checked value="apple-icon" id="apple-icon" name="scoreIcon" class="apple-icon" type="radio">
+                        <span class="apple-icon">&#127822;</span>
+                    </label>
+                    <label class="snake-color">
+                        <input value="peach-icon" id="peach-icon" name="scoreIcon" class="peach-icon" type="radio">
+                        <span class="peach-icon">&#127825;</span>
+                    </label>
+                    <label class="snake-color">
+                        <input value="cherry-icon" id="cherry-icon" name="scoreIcon" class="cherry-icon" type="radio">
+                        <span class="cherry-icon">&#127826;</span>
+                    </label>
+                    <label class="snake-color">
+                        <input value="grape-icon" id="grape-icon" name="scoreIcon" class="grape-icon" type="radio">
+                        <span class="grape-icon">&#127815;</span>
+                    </label>
+                    <label class="snake-color">
+                        <input value="watermelon-icon" id="watermelon-icon" name="scoreIcon" class="watermelon-icon" type="radio">
+                        <span class="watermelon-icon">&#127817;</span>
+                    </label>
+                </div>
+                <div class="score-box margin-top">       
+                    <div class="high-score"><button onclick="hideSettings(), snakeColor()" class="hs-btn"> Go Back </button></div>
+                    <a href="index.html" class="high-score"><button class="hs-btn"> Snake Game </button></a>
+                </div>
+            </div>
+        </div>
+        <div id="gameOver" class="end-game-container">
+            <div class="end-game">
+                <p class="game-over">Game Over</p>
+                <p id="endScore" class="your-score">0</p>
+                <div class="player-name-wrap"><input required = "" maxlength="20" type="text" id="playerName"><p class="user-name">Player Name</p></div>
+                <button onclick="scoreList()" class="submit-score">Submit</button>
+            </div>
+            <div class="retry-modal">
+                <div class="start-game"><div onclick="retryGame()" class="play-btn"> Retry </div></div>
+                <div class="high-score"><div onclick="scoreList()" class="hs-btn"> High Scores </div></div>
+            </div>
+        </div>  
+    </section>
+</body>
+<link rel="stylesheet" href="/CSS/snake.css">
+<link rel="stylesheet" href="/CSS/snakeCave.css">
+</html>
